@@ -2,9 +2,9 @@
 
 ## Team Members
 
-Ajaydeep Singh
+Ajaydeep Singh - @ajaydeepsingh
 
-Justin Cazzone
+Justin Cazzone - @jmc19
 
 Kevin Wong
 
