@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">cs2340ShelterSeek</string>
+    <string name="app_name">Shelter Seek</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
