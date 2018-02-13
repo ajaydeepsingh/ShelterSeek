@@ -1,4 +1,4 @@
-package com.example.jmc19.shelterseeker;
+package com.spring.cs2340.shelterseek;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.jmc19.shelterseeker", appContext.getPackageName());
+        assertEquals("com.spring.cs2340.shelterseek", appContext.getPackageName());
     }
 }

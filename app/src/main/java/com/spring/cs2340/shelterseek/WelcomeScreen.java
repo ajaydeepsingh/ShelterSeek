@@ -1,14 +1,12 @@
-package com.example.jmc19.shelterseeker;
+package com.spring.cs2340.shelterseek;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class WelcomeScreen extends AppCompatActivity {
 
@@ -30,8 +28,7 @@ public class WelcomeScreen extends AppCompatActivity {
                 if (user.equals("User") && pass.equals("Pass")) {
                     Intent newIntent = new Intent(getBaseContext(), MainScreen.class);
                     startActivity(newIntent);
-                }
-                else {
+                } else {
                     incorrect.setVisibility(View.VISIBLE);
                 }
             }

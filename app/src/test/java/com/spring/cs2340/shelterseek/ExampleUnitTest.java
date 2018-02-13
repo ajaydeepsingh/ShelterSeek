@@ -1,4 +1,4 @@
-package com.example.jmc19.shelterseeker;
+package com.spring.cs2340.shelterseek;
 
 import org.junit.Test;
 

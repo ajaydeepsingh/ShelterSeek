@@ -1,7 +1,7 @@
-package com.example.jmc19.shelterseeker;
+package com.spring.cs2340.shelterseek;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 public class USERRegistrationScreen extends AppCompatActivity {
 

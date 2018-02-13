@@ -12,16 +12,28 @@ public class User implements Parcelable {
     private String _password;
 
 
-
     /* **********************
      * Getters and setters
      */
-    public String getName() { return _username; }
-    public String getPassword() {return _password; }
-    public int getId() { return _id; }
+    public String getName() {
+        return _username;
+    }
 
-    public void setName(String name) { _username = name; }
-    public void setPassword(String password) { _password = password; }
+    public String getPassword() {
+        return _password;
+    }
+
+    public int getId() {
+        return _id;
+    }
+
+    public void setName(String name) {
+        _username = name;
+    }
+
+    public void setPassword(String password) {
+        _password = password;
+    }
 
 
     /**
@@ -35,7 +47,7 @@ public class User implements Parcelable {
     /**
      * The usual constructor
      *
-     * @param name username
+     * @param name     username
      * @param password password
      */
     public User(String name, String password) {
@@ -45,9 +57,8 @@ public class User implements Parcelable {
     }
 
     /**
-      *
-      * @return the display string representation
-      */
+     * @return the display string representation
+     */
     public String toString() {
         return _username + " " + _password;
     }
@@ -66,7 +77,7 @@ public class User implements Parcelable {
      * Constructor used by Parcel to make a new user out of the
      * parceled information
      *
-     * @param in  the parcel containing the user information
+     * @param in the parcel containing the user information
      */
     private User(Parcel in) {
         _username = in.readString();
