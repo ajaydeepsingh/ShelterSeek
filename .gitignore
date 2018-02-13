@@ -9,6 +9,8 @@ local.properties
 
 # Gradle generated files
 .gradle/
+build/
+app/
 
 # Signing files
 .signing/
@@ -35,3 +37,6 @@ local.properties
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+
+local.properties
