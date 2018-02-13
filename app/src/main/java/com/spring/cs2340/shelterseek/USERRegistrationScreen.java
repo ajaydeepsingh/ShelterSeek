@@ -1,0 +1,13 @@
+package com.spring.cs2340.shelterseek;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+public class USERRegistrationScreen extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_userregistration_screen);
+    }
+}
