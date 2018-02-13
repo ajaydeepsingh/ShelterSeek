@@ -89,16 +89,15 @@
         app:srcCompat="@android:color/darker_gray" />
 
     <TextView
-        android:id="@+id/ShelterSeeker"
+        android:id="@+id/ShelterSeek"
         android:layout_width="149dp"
         android:layout_height="38dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="ShelterSeeker"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:textColor="@android:color/holo_red_dark"
+        android:text="ShelterSeek"
+        android:textAppearance="@android:style/TextAppearance.Holo.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
