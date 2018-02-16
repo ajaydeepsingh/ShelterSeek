@@ -20,6 +20,7 @@ public class WelcomeScreen extends AppCompatActivity {
         Button loginButton = (Button) findViewById(R.id.Login);
         Button registerUser = (Button) findViewById(R.id.RegisterUser);
         Button registerShelter = (Button) findViewById(R.id.registerShelter);
+        Button registerAdmin = (Button) findViewById(R.id.registerAdmin);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,6 +45,13 @@ public class WelcomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent newIntent = new Intent(getBaseContext(), SHELTERRegistrationSceen.class);
+                startActivity(newIntent);
+            }
+        });
+        registerAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newIntent = new Intent(getBaseContext(), ADMINRegistrationScreen.class);
                 startActivity(newIntent);
             }
         });
