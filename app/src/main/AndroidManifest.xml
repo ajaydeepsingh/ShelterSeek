@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.spring.cs2340.shelterseek">
 
@@ -17,6 +18,8 @@
         </activity>
         <activity android:name=".MainScreen" />
         <activity android:name=".USERRegistrationScreen" />
-        <activity android:name=".SHELTERRegistrationSceen"></activity>
-   </application>
+        <activity android:name=".SHELTERRegistrationSceen" />
+        <activity android:name=".ADMINRegistrationScreen"></activity>
+    </application>
+
 </manifest>

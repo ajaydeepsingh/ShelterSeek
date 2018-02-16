@@ -1,120 +1,70 @@
-package com.example.jmc19.shelterseeker.Model;
+package com.spring.cs2340.shelterseek.Model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.util.List;
 
-public class User implements Parcelable {
-
-    private static int Next_Id = 0;
-
-    private int _id;
-    private String _username;
-    private String _password;
+/**
+ *
+ * Created by ajay on 2/15/2018
+ *
+ */
 
 
-    /* **********************
-     * Getters and setters
-     */
-    public String getName() {
-        return _username;
-    }
+public class User extends Account {
+    private String gender;
+    private List<Integer> dateOfBirth;
+    private boolean isVeteran;
 
-    public String getPassword() {
-        return _password;
-    }
-
-    public int getId() {
-        return _id;
-    }
-
-    public void setName(String name) {
-        _username = name;
-    }
-
-    public void setPassword(String password) {
-        _password = password;
+    public User(String name, String userID, String password, boolean lockedOut, String contactInfo,
+                String gender, List<Integer> dateOfBirth, boolean isVeteran) {
+        super(name, userID, password, lockedOut, contactInfo);
+        this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
+        this.isVeteran = isVeteran;
     }
 
 
-    /**
-     * No param constructor -- DO NOT CALL NORMALLY
-     * This constructor only for GUI use in creation dialog
-     */
+    public User(String name, String userID, String contactInfo, String password) {
+        this(name, userID, password, false, contactInfo, "Male", null, false);
+    }
+
     public User() {
-        this("enter new name", "NA");
+
     }
 
-    /**
-     * The usual constructor
-     *
-     * @param name     username
-     * @param password password
-     */
-    public User(String name, String password) {
-        _username = name;
-        _password = password;
-        _id = User.Next_Id++;
+    public String getGender() {
+        return gender;
     }
 
-    /**
-     * @return the display string representation
-     */
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public List<Integer> getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(List<Integer> dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public boolean isVeteran() {
+        return isVeteran;
+    }
+
+    public void setVeteran(boolean veteran) {
+        isVeteran = veteran;
+    }
+
+    @Override
     public String toString() {
-        return _username + " " + _password;
+        return "------USER------\n" +
+                "Name: " + getName() + "\n" +
+                "Username: " + getUserId() + "\n" +
+                "Password: " + getPassword() + "\n" +
+                "Contact Info: " + getContactInfo() + "\n" +
+                "Gender: " + getGender() + "\n" +
+                "DOB: " + getDateOfBirth().get(0) + "/" + getDateOfBirth().get(1) + "/"
+                + getDateOfBirth().get(2) + "\n" +
+                "Veteran: " + isVeteran();
     }
-
-    /* *********************************
-     * These methods are required by the Parcelable interface
-     * I just wanted to demo how to pass information from one activity
-     * to another through an intent.   If this were a real project, I
-     * would probably have the facade maintain information about the
-     * currently selected user which would remove the need to
-     * pass the user object in an intent, which would remove the need
-     * to implement the Parcelable interface and these methods.
-     */
-
-    /**
-     * Constructor used by Parcel to make a new user out of the
-     * parceled information
-     *
-     * @param in the parcel containing the user information
-     */
-    private User(Parcel in) {
-        _username = in.readString();
-        _password = in.readString();
-        _id = in.readInt();
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    /* *************************
-       If you add new instance vars to user, you will need to add them to the write
-       Be sure the order you write information matches the order that the constructor above
-       reads them.
-     */
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(_username);
-        dest.writeString(_password);
-        dest.writeInt(_id);
-    }
-
-    /**
-     * Should not have to edit this method if the constructor and write method are
-     * working correctly.
-     */
-    public static final Parcelable.Creator<User> CREATOR
-            = new Parcelable.Creator<User>() {
-        public User createFromParcel(Parcel in) {
-            return new User(in);
-        }
-
-        public User[] newArray(int size) {
-            return new User[size];
-        }
-    };
 }
