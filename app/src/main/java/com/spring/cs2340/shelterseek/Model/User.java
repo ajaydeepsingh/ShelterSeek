@@ -1,65 +1,70 @@
 package com.spring.cs2340.shelterseek.Model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.util.List;
 
-public abstract class User implements Parcelable {
-
-    protected static int Next_Id = 0;
-
-    protected int _id;
-    protected String _username;
-    protected String _password;
+/**
+ *
+ * Created by ajay on 2/15/2018
+ *
+ */
 
 
-    /* **********************
-     * Getters and setters
-     */
-    public String getName() {
-        return _username;
-    }
+public class User extends Account {
+    private String gender;
+    private List<Integer> dateOfBirth;
+    private boolean isVeteran;
 
-    public String getPassword() {
-        return _password;
-    }
-
-    public int getId() {
-        return _id;
-    }
-
-    public void setName(String name) {
-        _username = name;
-    }
-
-    public void setPassword(String password) {
-        _password = password;
+    public User(String name, String userID, String password, boolean lockedOut, String contactInfo,
+                String gender, List<Integer> dateOfBirth, boolean isVeteran) {
+        super(name, userID, password, lockedOut, contactInfo);
+        this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
+        this.isVeteran = isVeteran;
     }
 
 
-    /**
-     * No param constructor -- DO NOT CALL NORMALLY
-     * This constructor only for GUI use in creation dialog
-     */
+    public User(String name, String userID, String contactInfo, String password) {
+        this(name, userID, password, false, contactInfo, "Male", null, false);
+    }
+
     public User() {
-        this("enter new name", "NA");
+
     }
 
-    /**
-     * The usual constructor
-     *
-     * @param name     username
-     * @param password password
-     */
-    public User(String name, String password) {
-        _username = name;
-        _password = password;
-        _id = User.Next_Id++;
+    public String getGender() {
+        return gender;
     }
 
-    /**
-     * @return the display string representation
-     */
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public List<Integer> getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(List<Integer> dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public boolean isVeteran() {
+        return isVeteran;
+    }
+
+    public void setVeteran(boolean veteran) {
+        isVeteran = veteran;
+    }
+
+    @Override
     public String toString() {
-        return _username + " " + _password;
+        return "------USER------\n" +
+                "Name: " + getName() + "\n" +
+                "Username: " + getUserId() + "\n" +
+                "Password: " + getPassword() + "\n" +
+                "Contact Info: " + getContactInfo() + "\n" +
+                "Gender: " + getGender() + "\n" +
+                "DOB: " + getDateOfBirth().get(0) + "/" + getDateOfBirth().get(1) + "/"
+                + getDateOfBirth().get(2) + "\n" +
+                "Veteran: " + isVeteran();
     }
 }
