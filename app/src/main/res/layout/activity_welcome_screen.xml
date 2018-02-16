@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.spring.cs2340.shelterseek.WelcomeScreen">
+    tools:context="com.spring.cs2340.shelterseek.controller.WelcomeScreen">
 
     <ImageView
         android:id="@+id/BG"
