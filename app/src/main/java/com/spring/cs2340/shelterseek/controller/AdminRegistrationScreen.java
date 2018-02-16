@@ -19,6 +19,8 @@ public class AdminRegistrationScreen extends AppCompatActivity {
         final TextView invalid = (TextView) findViewById(R.id.Invalid);
         final EditText username = (EditText) findViewById(R.id.Username);
         final EditText password = (EditText) findViewById(R.id.Password);
+        final EditText contactInfo = (EditText) findViewById(R.id.phoneNumAdmin);
+        final EditText realName = (EditText) findViewById(R.id.AdminRealName);
         final EditText adminCode = (EditText) findViewById(R.id.adminCode);
         Button registerAsAdmin = (Button) findViewById(R.id.adminRegister);
 

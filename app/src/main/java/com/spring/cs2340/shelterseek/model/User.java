@@ -11,11 +11,11 @@ import java.util.List;
 
 public class User extends Account {
     private String gender;
-    private List<Integer> dateOfBirth;
+    private String dateOfBirth;
     private boolean isVeteran;
 
     public User(String name, String userID, String password, boolean lockedOut, String contactInfo,
-                String gender, List<Integer> dateOfBirth, boolean isVeteran) {
+                String gender, String dateOfBirth, boolean isVeteran) {
         super(name, userID, password, lockedOut, contactInfo);
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
@@ -39,11 +39,11 @@ public class User extends Account {
         this.gender = gender;
     }
 
-    public List<Integer> getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(List<Integer> dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -63,8 +63,7 @@ public class User extends Account {
                 "Password: " + getPassword() + "\n" +
                 "Contact Info: " + getContactInfo() + "\n" +
                 "Gender: " + getGender() + "\n" +
-                "DOB: " + getDateOfBirth().get(0) + "/" + getDateOfBirth().get(1) + "/"
-                + getDateOfBirth().get(2) + "\n" +
+                "DOB: " + getDateOfBirth() + "\n" +
                 "Veteran: " + isVeteran();
     }
 }
