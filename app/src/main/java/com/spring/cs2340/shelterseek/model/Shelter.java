@@ -1,4 +1,4 @@
-package com.spring.cs2340.shelterseek.Model;
+package com.spring.cs2340.shelterseek.model;
 
 import java.util.HashSet;
 

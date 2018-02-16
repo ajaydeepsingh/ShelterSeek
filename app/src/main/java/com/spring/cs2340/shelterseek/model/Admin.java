@@ -1,4 +1,4 @@
-package com.spring.cs2340.shelterseek.Model;
+package com.spring.cs2340.shelterseek.model;
 /**
  * Created by jmc19 on 2/15/2018.
  * Created by ajay on 2/15/2018.
