@@ -63,14 +63,6 @@ freeline.py
 freeline/
 freeline_project_description.json
 
-<<<<<<< HEAD
-# fastlane
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots
-fastlane/test_output
-fastlane/readme.md
-=======
 # OS-specific files
 .DS_Store
 .DS_Store?
@@ -80,8 +72,7 @@ fastlane/readme.md
 ehthumbs.db
 Thumbs.db
 
-
-local.properties
->>>>>>> master
 local.properties
 app/src/main/java/cs2340/cs2340shelterseek/User.java
+.idea/misc.xml
+.idea/misc.xml
