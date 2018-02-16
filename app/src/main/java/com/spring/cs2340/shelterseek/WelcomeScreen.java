@@ -37,21 +37,21 @@ public class WelcomeScreen extends AppCompatActivity {
         registerUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent newIntent = new Intent(getBaseContext(), USERRegistrationScreen.class);
+                Intent newIntent = new Intent(getBaseContext(), UserRegistrationScreen.class);
                 startActivity(newIntent);
             }
         });
         registerShelter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent newIntent = new Intent(getBaseContext(), SHELTERRegistrationSceen.class);
+                Intent newIntent = new Intent(getBaseContext(), ShelterRegistrationScreen.class);
                 startActivity(newIntent);
             }
         });
         registerAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent newIntent = new Intent(getBaseContext(), ADMINRegistrationScreen.class);
+                Intent newIntent = new Intent(getBaseContext(), AdminRegistrationScreen.class);
                 startActivity(newIntent);
             }
         });

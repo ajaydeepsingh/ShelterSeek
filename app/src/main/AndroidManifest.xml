@@ -17,9 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainScreen" />
-        <activity android:name=".USERRegistrationScreen" />
-        <activity android:name=".SHELTERRegistrationSceen" />
-        <activity android:name=".ADMINRegistrationScreen"></activity>
+        <activity android:name=".UserRegistrationScreen" />
+        <activity android:name=".ShelterRegistrationScreen" />
+        <activity android:name=".AdminRegistrationScreen"></activity>
     </application>
 
 </manifest>
