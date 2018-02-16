@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.spring.cs2340.shelterseek.ADMINRegistrationScreen">
+    tools:context="com.spring.cs2340.shelterseek.controller.AdminRegistrationScreen">
 
     <EditText
         android:id="@+id/Username"
