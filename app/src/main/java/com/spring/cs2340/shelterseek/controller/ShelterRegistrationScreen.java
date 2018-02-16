@@ -15,8 +15,10 @@ public class ShelterRegistrationScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shelterregistration_sceen);
-        final EditText username = (EditText) findViewById(R.id.ShelterName);
+        final EditText shelterID = (EditText) findViewById(R.id.ShelterName);
+        final EditText employeeName = (EditText) findViewById(R.id.NameShelterEmpl);
         final EditText password = (EditText) findViewById(R.id.PasswordShelter);
+        final EditText contactinfo = (EditText) findViewById(R.id.ContactInfoEmp);
         Button registerAsShelter = (Button) findViewById(R.id.shelterRegistration);
 
         registerAsShelter.setOnClickListener(new View.OnClickListener() {
