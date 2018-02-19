@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.spring.cs2340.shelterseek.R;
+import com.spring.cs2340.shelterseek.model.Model;
+import com.spring.cs2340.shelterseek.model.ShelterEmployee;
 
 public class ShelterRegistrationScreen extends AppCompatActivity {
 
@@ -15,10 +17,11 @@ public class ShelterRegistrationScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shelterregistration_sceen);
+        final EditText userName = (EditText) findViewById(R.id.UsernameEmployee);
         final EditText shelterID = (EditText) findViewById(R.id.ShelterName);
         final EditText employeeName = (EditText) findViewById(R.id.NameShelterEmpl);
         final EditText password = (EditText) findViewById(R.id.PasswordShelter);
-        final EditText contactinfo = (EditText) findViewById(R.id.ContactInfoEmp);
+        final EditText contactInfo = (EditText) findViewById(R.id.ContactInfoEmp);
         Button registerAsShelter = (Button) findViewById(R.id.shelterRegistration);
 
         registerAsShelter.setOnClickListener(new View.OnClickListener() {
@@ -26,6 +29,14 @@ public class ShelterRegistrationScreen extends AppCompatActivity {
             public void onClick(View view) {
 
                 // add new shelter to arraylist
+                String eName = employeeName.getText().toString();
+                String uName = userName.getText().toString();
+                String pWord = password.getText().toString();
+                String cInfo = contactInfo.getText().toString();
+                String sID = shelterID.getText().toString();
+                ShelterEmployee newShelter = new ShelterEmployee(eName, uName, pWord, cInfo, sID);
+                Model m = Model.getInstance();
+                m.addNewAccount(newShelter);
 
                 Intent newIntent = new Intent(getBaseContext(), WelcomeScreen.class);
                 startActivity(newIntent);
