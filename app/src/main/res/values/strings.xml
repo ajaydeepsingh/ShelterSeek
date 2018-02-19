@@ -2,7 +2,6 @@
     <string name="app_name">shelterseek</string>
 
     <string-array name="gender_array">
-        <item>Gender</item>
         <item>Male</item>
         <item>Female</item>
         <item>Other</item>
