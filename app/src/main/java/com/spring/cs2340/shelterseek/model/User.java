@@ -14,17 +14,17 @@ public class User extends Account {
     private String dateOfBirth;
     private boolean isVeteran;
 
-    public User(String name, String userID, String password, boolean lockedOut, String contactInfo,
+    public User(String name, String userName, String password, boolean lockedOut, String contactInfo,
                 String gender, String dateOfBirth, boolean isVeteran) {
-        super(name, userID, password, lockedOut, contactInfo);
+        super(name, userName, password, lockedOut, contactInfo);
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
         this.isVeteran = isVeteran;
     }
 
 
-    public User(String name, String userID, String contactInfo, String password) {
-        this(name, userID, password, false, contactInfo, "Male", null, false);
+    public User(String name, String userName, String contactInfo, String password) {
+        this(name, userName, password, false, contactInfo, "Male", null, false);
     }
 
     public User() {
@@ -59,7 +59,7 @@ public class User extends Account {
     public String toString() {
         return "------USER------\n" +
                 "Name: " + getName() + "\n" +
-                "Username: " + getUserId() + "\n" +
+                "Username: " + getUserName() + "\n" +
                 "Password: " + getPassword() + "\n" +
                 "Contact Info: " + getContactInfo() + "\n" +
                 "Gender: " + getGender() + "\n" +

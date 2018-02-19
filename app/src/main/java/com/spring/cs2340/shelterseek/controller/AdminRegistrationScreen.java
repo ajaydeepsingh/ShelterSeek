@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.spring.cs2340.shelterseek.R;
+import com.spring.cs2340.shelterseek.model.Admin;
+import com.spring.cs2340.shelterseek.model.Model;
 
 public class AdminRegistrationScreen extends AppCompatActivity {
 
@@ -31,7 +33,13 @@ public class AdminRegistrationScreen extends AppCompatActivity {
                 if (adminText.equals("This is the admin code")) {
 
                     //Add a new admin to the arrayList
-
+                    String uName = username.getText().toString();
+                    String pWord = password.getText().toString();
+                    String cInfo = contactInfo.getText().toString();
+                    String rName = realName.getText().toString();
+                    Admin newAdmin = new Admin(uName, pWord, cInfo, rName);
+                    Model m = Model.getInstance();
+                    m.addNewAccount(newAdmin);
                     Intent newIntent = new Intent(getBaseContext(), WelcomeScreen.class);
                     startActivity(newIntent);
                 } else {
