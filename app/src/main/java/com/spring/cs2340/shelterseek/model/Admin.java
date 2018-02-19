@@ -6,8 +6,8 @@ package com.spring.cs2340.shelterseek.model;
  */
 
 public class Admin extends Account {
-    public Admin(String name, String userId, String password, String contactInfo) {
-        super(name, userId, password, false, contactInfo);
+    public Admin(String name, String userName, String password, String contactInfo) {
+        super(name, userName, password, false, contactInfo);
     }
 
     public Admin() {
@@ -18,7 +18,7 @@ public class Admin extends Account {
     public String toString() {
         return "------ADMIN------\n" +
                 "Name: " + getName() + "\n" +
-                "Username: " + getUserId() + "\n" +
+                "Username: " + getUserName() + "\n" +
                 "Password: " + getPassword() + "\n" +
                 "Contact Info: " + getContactInfo();
     }
