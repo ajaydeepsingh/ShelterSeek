@@ -32,7 +32,12 @@ public class Model {
         ArrayList<Account> accounts = new ArrayList<Account>();
     }
 
-    public void addNewAccount(Account a) {
+    public boolean addNewAccount(Account a) {
+        if (a == null) {
+            System.out.println("Account is null");
+            return false;
+        } 
         accounts.add(a);
+        return true;
     }
 }
