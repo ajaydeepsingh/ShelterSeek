@@ -2,6 +2,7 @@ package com.spring.cs2340.shelterseek.model;
 
 import java.util.HashSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by ajay on 2/16/18.
@@ -13,7 +14,7 @@ public class Model {
      */
     private static final Model instance = new Model();
     private static ArrayList<Account> accounts;
-    private HashSet<Shelter> shelters;
+    private HashMap<String, Shelter> shelters;
     private Account currentUser;
 
     /**
@@ -31,6 +32,24 @@ public class Model {
     private Model() {
         accounts = new ArrayList<Account>();
         this.dummyData();
+    }
+
+    /**
+     * Getter for shelters.
+     *
+     * @return the shelters.
+     */
+    public HashMap<String, Shelter> getShelters() {
+        return shelters;
+    }
+
+    /**
+     * Setter for shelters
+     *
+     * @param shelters shelter to set shelters to.
+     */
+    public void setShelters(HashMap<String, Shelter> shelters) {
+        this.shelters = shelters;
     }
 
     public void dummyData() {
