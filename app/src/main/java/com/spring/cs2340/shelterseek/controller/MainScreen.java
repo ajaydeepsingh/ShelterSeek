@@ -1,5 +1,6 @@
 package com.spring.cs2340.shelterseek.controller;
 import com.google.firebase.FirebaseApp;
+import com.spring.cs2340.shelterseek.model.Model;
 import com.spring.cs2340.shelterseek.model.Shelter;
 import com.spring.cs2340.shelterseek.R;
 
@@ -45,9 +46,11 @@ public class MainScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mAuth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference();
+        setContentView(R.layout.activity_main_screen);
+
+//        mAuth = FirebaseAuth.getInstance();
+//        database = FirebaseDatabase.getInstance();
+//        myRef = database.getReference();
 
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(getResources().openRawResource(R.raw.hsd)));
@@ -70,10 +73,44 @@ public class MainScreen extends AppCompatActivity {
             Log.d("ERROR", e.getMessage());
             e.printStackTrace();
         }
-
-
-        setContentView(R.layout.activity_main_screen);
-
-
     }
 }
+
+
+
+
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//        mAuth = FirebaseAuth.getInstance();
+//        database = FirebaseDatabase.getInstance();
+//        myRef = database.getReference();
+//
+//        try {
+//            BufferedReader br = new BufferedReader(new InputStreamReader(getResources().openRawResource(R.raw.hsd)));
+//            CSVReader cr = new CSVReader(br);
+//
+//            String record[] = cr.readNext();
+//
+//            Shelter shelter;
+//
+//            while ((record = cr.readNext()) != null) {
+//                shelter = new Shelter(record[0], record[1], record[2], record[3],
+//                        Double.parseDouble(record[4]), Double.parseDouble(record[5]),
+//                        record[6], record[7], record[8],
+//                        0);
+//                myRef.child("shelters").child(shelter.getUniqueKey()).setValue(shelter);
+//            }
+//
+//        } catch (Exception e) {
+//            // Probably some IOException, but for this script, who cares.
+//            Log.d("ERROR", e.getMessage());
+//            e.printStackTrace();
+//        }
+//
+//
+//        setContentView(R.layout.activity_main_screen);
+//
+//
+//    }
