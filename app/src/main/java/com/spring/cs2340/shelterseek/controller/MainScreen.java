@@ -23,7 +23,7 @@ import java.util.List;
 
 public class MainScreen extends AppCompatActivity {
     private ListView shelters;
-    private List<Shelter> shelterList = new ArrayList<>();
+    private static ArrayList<Shelter> shelterList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,10 @@ public class MainScreen extends AppCompatActivity {
                 System.out.println("Started new intent");
             }
         });
+    }
+
+    public static ArrayList<Shelter> getShelters() {
+        return shelterList;
     }
 
     private void parseData() {
