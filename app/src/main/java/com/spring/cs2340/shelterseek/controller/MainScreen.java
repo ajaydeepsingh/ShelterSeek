@@ -1,5 +1,4 @@
 package com.spring.cs2340.shelterseek.controller;
-import com.google.firebase.FirebaseApp;
 import com.spring.cs2340.shelterseek.model.Shelter;
 import com.spring.cs2340.shelterseek.R;
 
