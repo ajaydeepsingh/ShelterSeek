@@ -40,7 +40,7 @@ public class MainScreen extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
-                CHECK STUDENTS CODE FOR COURSE LIST ACTIVITY AND THE ON CLICK LISTENER
+                CHECK LAB32 CODE FOR COURSE LIST ACTIVITY AND THE ON CLICK LISTENER
             }
         });
     }

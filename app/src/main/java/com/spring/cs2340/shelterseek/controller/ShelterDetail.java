@@ -28,7 +28,7 @@ public class ShelterDetail extends AppCompatActivity {
             name.setText(_shelterDisplayed.getName());
             address.setText(_shelterDisplayed.getName());
             String newString = "" + _shelterDisplayed.getLatitude() + ", " + _shelterDisplayed.
-                    getLongitude()
+                    getLongitude();
             ll.setText(newString);
             restrictions.setText(_shelterDisplayed.getRestrictions());
             notes.setText(_shelterDisplayed.getSpecialNotes());
