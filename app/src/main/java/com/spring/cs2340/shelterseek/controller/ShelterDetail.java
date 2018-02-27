@@ -41,7 +41,7 @@ public class ShelterDetail extends AppCompatActivity {
         ll.setText("Latitude, Longitude: " + selectedShelter.getLatitude() + ", "
                 + selectedShelter.getLongitude());
         notes.setText("Special Notes: " + selectedShelter.getSpecialNotes());
-        contact_info.setText("Contact Information" + selectedShelter.getContactInfo());
+        contact_info.setText("Contact Information: " + selectedShelter.getContactInfo());
         System.out.println("Set all text fields");
     }
 }
