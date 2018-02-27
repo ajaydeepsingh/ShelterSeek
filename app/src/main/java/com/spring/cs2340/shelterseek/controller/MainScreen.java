@@ -1,8 +1,12 @@
 package com.spring.cs2340.shelterseek.controller;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -30,6 +34,15 @@ public class MainScreen extends AppCompatActivity {
         ArrayAdapter<Shelter> adapter = new ArrayAdapter<Shelter>(this,
                 android.R.layout.simple_list_item_1, shelterList);
         shelters.setAdapter(adapter);
+
+        shelters.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, final View view,
+                                    int position, long id) {
+                CHECK STUDENTS CODE FOR COURSE LIST ACTIVITY AND THE ON CLICK LISTENER
+            }
+        });
     }
 
     protected void parseData() {
