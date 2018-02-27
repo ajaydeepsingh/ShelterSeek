@@ -24,6 +24,7 @@ import java.util.List;
 public class MainScreen extends AppCompatActivity {
     private ListView shelters;
     private List<Shelter> shelterList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,18 +35,19 @@ public class MainScreen extends AppCompatActivity {
         ArrayAdapter<Shelter> adapter = new ArrayAdapter<Shelter>(this,
                 android.R.layout.simple_list_item_1, shelterList);
         shelters.setAdapter(adapter);
-
         shelters.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
             @Override
-            public void onItemClick(AdapterView<?> parent, final View view,
-                                    int position, long id) {
-                CHECK LAB32 CODE FOR COURSE LIST ACTIVITY AND THE ON CLICK LISTENER
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getBaseContext(), ShelterDetail.class);
+                intent.putExtra("position", i);
+                System.out.println("About to open ShelterPage");
+                startActivity(intent);
+                System.out.println("Started new intent");
             }
         });
     }
 
-    protected void parseData() {
+    private void parseData() {
         InputStream shelterStream = getResources().openRawResource(R.raw.homelessdatabase);
         BufferedReader reader = new BufferedReader(new InputStreamReader
                 (shelterStream, Charset.forName("UTF-8")));
