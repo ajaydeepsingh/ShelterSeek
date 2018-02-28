@@ -23,7 +23,7 @@ public class ShelterDetail extends AppCompatActivity {
         int position = intent.getIntExtra("position", 0);
 
 
-//        TextView id = findViewById(R.id.ShelterId);
+        TextView id = findViewById(R.id.ShelterId);
         TextView name = findViewById(R.id.ShelterName);
         TextView address = findViewById(R.id.ShelterAddress);
         TextView ll = findViewById(R.id.ShelterLongLat);
@@ -33,11 +33,15 @@ public class ShelterDetail extends AppCompatActivity {
         TextView contact_info = findViewById(R.id.ShelterPhone);
         ArrayList<Shelter> shelters = MainScreen.getShelters();
         Shelter selectedShelter = shelters.get(position);
-        name.setText(selectedShelter.getName());
+        id.setText("Shelter ID: " + selectedShelter.getUniqueKey());
+        name.setText("Shelter Name: " + selectedShelter.getName());
         capacity.setText("Capacity: " + selectedShelter.getCapacity());
         restrictions.setText("Restrictions: " + selectedShelter.getRestrictions());
-        address.setText(selectedShelter.getAddress());
-        contact_info.setText(selectedShelter.getContactInfo());
+        address.setText("Address: " + selectedShelter.getAddress());
+        ll.setText("Latitude, Longitude: " + selectedShelter.getLatitude() + ", "
+                + selectedShelter.getLongitude());
+        notes.setText("Special Notes: " + selectedShelter.getSpecialNotes());
+        contact_info.setText("Contact Information: " + selectedShelter.getContactInfo());
         System.out.println("Set all text fields");
     }
 }
