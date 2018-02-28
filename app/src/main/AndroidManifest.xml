@@ -19,7 +19,8 @@
         <activity android:name=".controller.MainScreen" />
         <activity android:name=".controller.UserRegistrationScreen" />
         <activity android:name=".controller.ShelterRegistrationScreen" />
-        <activity android:name=".controller.AdminRegistrationScreen"></activity>
+        <activity android:name=".controller.AdminRegistrationScreen" />
+        <activity android:name=".controller.ShelterDetail"></activity>
     </application>
 
 </manifest>
