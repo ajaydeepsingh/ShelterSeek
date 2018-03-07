@@ -39,16 +39,6 @@ public class SearchScreen extends AppCompatActivity {
             ArrayAdapter<Shelter> adapter = new ArrayAdapter<Shelter>(this,
                     android.R.layout.simple_list_item_1, shelterSearchList);
             shelterSearch.setAdapter(adapter);
-            shelterSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    Intent intent = new Intent(getBaseContext(), ShelterDetail.class);
-                    intent.putExtra("position", i);
-                    System.out.println("About to open ShelterPage");
-                    startActivity(intent);
-                    System.out.println("Started new intent");
-                }
-            });
         });
     }
 
