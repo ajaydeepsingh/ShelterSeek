@@ -67,6 +67,7 @@ public class Shelter implements Parcelable {
         contactInfo = contact;
         address = addr;
         specialNotes = specNotes;
+
     }
 
     public String getUniqueKey() {

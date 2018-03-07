@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 
 import com.spring.cs2340.shelterseek.R;
@@ -31,7 +30,6 @@ public class MainScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
         shelters = findViewById(R.id.shelterList);
-        Button searchButton = (Button) findViewById(R.id.Search);
         shelterList = new ArrayList<>();
         parseData();
         ArrayAdapter<Shelter> adapter = new ArrayAdapter<Shelter>(this,
@@ -46,10 +44,6 @@ public class MainScreen extends AppCompatActivity {
                 startActivity(intent);
                 System.out.println("Started new intent");
             }
-        });
-        searchButton.setOnClickListener((view) -> {
-            Intent newIntent = new Intent(getBaseContext(), SearchScreen.class);
-            startActivity(newIntent);
         });
     }
 
