@@ -29,7 +29,9 @@
             android:name=".controller.AdminRegistrationScreen"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".controller.ShelterDetail" />
-        <activity android:name=".controller.SearchScreen"></activity>
+        <activity
+            android:name=".controller.SearchScreen"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>
