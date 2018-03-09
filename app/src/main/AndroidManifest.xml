@@ -16,13 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
         <activity android:name=".controller.MainScreen" />
         <activity android:name=".controller.UserRegistrationScreen"/>
         <activity android:name=".controller.ShelterRegistrationScreen"/>
         <activity android:name=".controller.AdminRegistrationScreen" />
         <activity android:name=".controller.ShelterDetail" ></activity>
-=======
         <activity
             android:name=".controller.MainScreen"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
@@ -39,7 +37,6 @@
         <activity
             android:name=".controller.SearchScreen"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
->>>>>>> Justin
     </application>
 
 </manifest>
