@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GitHub-cs2340.iml" filepath="$PROJECT_DIR$/GitHub-cs2340.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\GitHub\cs2340\app\app.iml" filepath="D:\GitHub\cs2340\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/cs2340.iml" filepath="$PROJECT_DIR$/cs2340.iml" />
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/app/cs2340-app.iml" filepath="$PROJECT_DIR$/app/cs2340-app.iml" />
-=======
-      <module fileurl="file://D:\GitHub\cs2340\cs2340.iml" filepath="D:\GitHub\cs2340\cs2340.iml" />
->>>>>>> master
     </modules>
   </component>
 </project>
