@@ -14,7 +14,7 @@ public class Model {
      */
     private static final Model instance = new Model();
     private static ArrayList<Account> accounts;
-    private HashMap<String, Shelter> shelters;
+    private HashMap<String, Shelter> mshelters;
     private Account currentUser;
 
     /**
@@ -40,7 +40,7 @@ public class Model {
      * @return the shelters.
      */
     public HashMap<String, Shelter> getShelters() {
-        return shelters;
+        return mshelters;
     }
 
     /**
@@ -49,7 +49,7 @@ public class Model {
      * @param shelters shelter to set shelters to.
      */
     public void setShelters(HashMap<String, Shelter> shelters) {
-        this.shelters = shelters;
+        this.mshelters = shelters;
     }
 
     public void dummyData() {
