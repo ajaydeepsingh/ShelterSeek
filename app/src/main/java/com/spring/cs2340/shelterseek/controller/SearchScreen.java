@@ -3,6 +3,7 @@ package com.spring.cs2340.shelterseek.controller;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -35,6 +36,12 @@ public class SearchScreen extends AppCompatActivity {
         searchList.setOnClickListener(view -> {
             shelterSearchList = new ArrayList<>();
             String s = searchCond.getText().toString();
+            if (s.equalsIgnoreCase("male")) {
+                s = "Men";
+            }
+            if (s.equalsIgnoreCase("female")) {
+                s = "Women";
+            }
             parseData(s);
             ArrayAdapter<Shelter> adapter = new ArrayAdapter<Shelter>(this,
                     android.R.layout.simple_list_item_1, shelterSearchList);
@@ -44,35 +51,38 @@ public class SearchScreen extends AppCompatActivity {
 
     private void parseData(String s) {
         InputStream shelterStream = getResources().openRawResource(R.raw.homelessdatabase);
-        BufferedReader reader = new BufferedReader(new InputStreamReader
-                (shelterStream, Charset.forName("UTF-8")));
-        String readLine = "";
-        try {
-            reader.readLine();
-            readLine = reader.readLine();
-            while (readLine != null) {
-                String[] tokens = readLine.split(",");
-                if (tokens[0].contains(s) || tokens[1].contains(s) || tokens[2].contains(s) ||
-                        tokens[3].contains(s) || tokens[4].contains(s) || tokens[5].contains(s) ||
-                        tokens[6].contains(s) || tokens[7].contains(s) || tokens[8].contains(s)) {
-                    Shelter newShelter = new Shelter();
-                    newShelter.setUniqueKey(tokens[0]);
-                    newShelter.setName(tokens[1]);
-                    newShelter.setCapacity(tokens[2]);
-                    newShelter.setRestrictions(tokens[3]);
-                    double longitude = Double.parseDouble(tokens[4]);
-                    newShelter.setLongitude(longitude);
-                    double latitude = Double.parseDouble(tokens[5]);
-                    newShelter.setLatitude(latitude);
-                    newShelter.setAddress(tokens[6]);
-                    newShelter.setSpecialNotes(tokens[7]);
-                    newShelter.setContactInfo(tokens[8]);
-                    shelterSearchList.add(newShelter);
-                }
+        String[] words = s.split(" ");
+        for (String word : words) {
+            BufferedReader reader = new BufferedReader(new InputStreamReader
+                    (shelterStream, Charset.forName("UTF-8")));
+            String readLine = "";
+            try {
+                reader.readLine();
                 readLine = reader.readLine();
+                while (readLine != null) {
+                    String[] tokens = readLine.split(",");
+                    if (tokens[0].contains(word) || tokens[1].contains(word) || tokens[2].contains(word) ||
+                            tokens[3].contains(word) || tokens[4].contains(word) || tokens[5].contains(word) ||
+                            tokens[6].contains(word) || tokens[7].contains(word) || tokens[8].contains(word)) {
+                        Shelter newShelter = new Shelter();
+                        newShelter.setUniqueKey(tokens[0]);
+                        newShelter.setName(tokens[1]);
+                        newShelter.setCapacity(tokens[2]);
+                        newShelter.setRestrictions(tokens[3]);
+                        double longitude = Double.parseDouble(tokens[4]);
+                        newShelter.setLongitude(longitude);
+                        double latitude = Double.parseDouble(tokens[5]);
+                        newShelter.setLatitude(latitude);
+                        newShelter.setAddress(tokens[6]);
+                        newShelter.setSpecialNotes(tokens[7]);
+                        newShelter.setContactInfo(tokens[8]);
+                        shelterSearchList.add(newShelter);
+                    }
+                    readLine = reader.readLine();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }
