@@ -32,7 +32,6 @@
         <activity
             android:name=".controller.SearchScreen"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".controller.ReserveScreen"></activity>
     </application>
 
 </manifest>

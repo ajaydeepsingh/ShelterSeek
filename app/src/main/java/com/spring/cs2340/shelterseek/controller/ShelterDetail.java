@@ -3,14 +3,10 @@ package com.spring.cs2340.shelterseek.controller;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.EditText;
 
 import com.spring.cs2340.shelterseek.R;
-import com.spring.cs2340.shelterseek.model.Account;
-import com.spring.cs2340.shelterseek.model.Model;
 import com.spring.cs2340.shelterseek.model.Shelter;
 
 import java.util.ArrayList;
@@ -35,7 +31,6 @@ public class ShelterDetail extends AppCompatActivity {
         TextView notes = findViewById(R.id.ShelterNotes);
         TextView capacity = findViewById(R.id.ShelterCapacity);
         TextView contact_info = findViewById(R.id.ShelterPhone);
-        Button resButton = findViewById(R.id.ReserveButton);
         ArrayList<Shelter> shelters = MainScreen.getShelters();
         Shelter selectedShelter = shelters.get(position);
         id.setText("Shelter ID: " + selectedShelter.getUniqueKey());
@@ -48,14 +43,6 @@ public class ShelterDetail extends AppCompatActivity {
         notes.setText("Special Notes: " + selectedShelter.getSpecialNotes());
         contact_info.setText("Contact Information: " + selectedShelter.getContactInfo());
         System.out.println("Set all text fields");
-        resButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getBaseContext(), ReserveScreen.class);
-                intent.putExtra("position", position);
-                startActivity(intent);
-            }
-        });
     }
 }
 

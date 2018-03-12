@@ -13,7 +13,6 @@ public class User extends Account {
     private String gender;
     private String dateOfBirth;
     private boolean isVeteran;
-    private int reservedBeds;
 
     public User(String name, String userName, String password, boolean lockedOut, String contactInfo,
                 String gender, String dateOfBirth, boolean isVeteran) {
@@ -21,13 +20,11 @@ public class User extends Account {
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
         this.isVeteran = isVeteran;
-        this.reservedBeds = 0;
     }
 
 
     public User(String name, String userName, String contactInfo, String password) {
         this(name, userName, password, false, contactInfo, "Male", null, false);
-        this.reservedBeds = 0;
     }
 
     public User() {
@@ -57,12 +54,6 @@ public class User extends Account {
     public void setVeteran(boolean veteran) {
         isVeteran = veteran;
     }
-
-    public void setReservedBeds(int bedBool) { reservedBeds = bedBool; }
-
-    public int getReservedBeds() { return reservedBeds; }
-
-
 
     @Override
     public String toString() {

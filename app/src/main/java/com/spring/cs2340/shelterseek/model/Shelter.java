@@ -14,7 +14,7 @@ public class Shelter implements Parcelable {
     private String uniqueKey;
     private String name;
     private String capacity;
-    private String vacancies;
+    private int vacancies;
     private double latitude;
     private double longitude;
 //    private float rating;
@@ -52,11 +52,11 @@ public class Shelter implements Parcelable {
 
 
     public Shelter() {
-        this(null, null, null, null, 0, 0, null, null, null, null);
+        this(null, null, null, null, 0, 0, null, null, null, 0);
     }
 
     public Shelter(String key, String name, String cap, String restrics, double lon, double lat,
-                   String addr, String specNotes, String contact, String vac) {
+                   String addr, String specNotes, String contact, int vac) {
         uniqueKey = key;
         this.name = name;
         capacity = cap;
@@ -82,7 +82,7 @@ public class Shelter implements Parcelable {
         return capacity;
     }
 
-    public String getVacancies() {
+    public int getVacancies() {
         return vacancies;
     }
 
@@ -114,7 +114,7 @@ public class Shelter implements Parcelable {
         capacity = n;
     }
 
-    public void setVacancies(String n) {
+    public void setVacancies(int n) {
         vacancies = n;
     }
 
@@ -143,7 +143,7 @@ public class Shelter implements Parcelable {
         uniqueKey = p.readString();
         name = p.readString();
         capacity = p.readString();
-        vacancies = p.readString();
+        vacancies = p.readInt();
         longitude = p.readDouble();
         latitude = p.readDouble();
         restrictions = p.readString();
@@ -162,7 +162,7 @@ public class Shelter implements Parcelable {
         parcel.writeString(uniqueKey);
         parcel.writeString(name);
         parcel.writeString(capacity);
-        parcel.writeString(vacancies);
+        parcel.writeInt(vacancies);
         parcel.writeDouble(longitude);
         parcel.writeDouble(latitude);
         parcel.writeString(restrictions);
