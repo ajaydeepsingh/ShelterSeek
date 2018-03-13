@@ -82,6 +82,7 @@ public class MainScreen extends AppCompatActivity {
                 newShelter.setAddress(tokens[6]);
                 newShelter.setSpecialNotes(tokens[7]);
                 newShelter.setContactInfo(tokens[8]);
+                newShelter.setVacancies(tokens[2]);
                 shelterList.add(newShelter);
                 readLine = reader.readLine();
             }
