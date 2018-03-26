@@ -53,6 +53,7 @@ public class WelcomeScreen extends AppCompatActivity {
                 for (Account a: accounts) {
                     if (user.equals(a.getUserName()) && pass.equals(a.getPassword())) {
                         login = true;
+                        model.setCurrentUser(a);
                     }
                 }
                 if (login) {
