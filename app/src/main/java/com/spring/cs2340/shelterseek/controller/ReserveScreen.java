@@ -60,6 +60,7 @@ public class ReserveScreen extends AppCompatActivity {
                     compareVac = compareVac - vac;
                     String currentVac = "" + compareVac;
                     selectedShelter.setVacancies(currentVac);
+                    useraccount.setReservedBeds(vac);
                     // FIND A WAY TO GET THE USER THAT IS LOGGED IN,
                     // SET THE RESERVEDBEDS INT TO VAC
                 }
@@ -69,6 +70,11 @@ public class ReserveScreen extends AppCompatActivity {
         cancelRes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int newvac = useraccount.getReservedBeds();
+                int oldvac = Integer.parseInt(selectedShelter.getVacancies());
+                newvac += oldvac;
+                selectedShelter.setVacancies("" + newvac);
+                useraccount.setReservedBeds(0);
                 // ADD USER'S RESERVED BEDS TO THE VACANCIES
                 // SET USER'S RESERVED BEDS TO 0
             }
