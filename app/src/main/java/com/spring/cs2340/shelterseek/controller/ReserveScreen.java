@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import com.spring.cs2340.shelterseek.R;
 import com.spring.cs2340.shelterseek.model.Shelter;
+import com.spring.cs2340.shelterseek.model.User;
+import com.spring.cs2340.shelterseek.model.Model;
+
 
 import org.w3c.dom.Text;
 
@@ -26,6 +29,8 @@ public class ReserveScreen extends AppCompatActivity {
         int position = intent.getIntExtra("position", 0);
         ArrayList<Shelter> shelters = MainScreen.getShelters();
         Shelter selectedShelter = shelters.get(position);
+        final Model model = Model.getInstance();
+        final User useraccount = (User) model.getCurrentUser();
 
         TextView capacity = findViewById(R.id.capacityToReserve);
         TextView vacancy = findViewById(R.id.vacancies);
@@ -47,7 +52,8 @@ public class ReserveScreen extends AppCompatActivity {
                 int compareVac = Integer.parseInt(vacString);
                 if (vac > compareVac) {
                     error.setVisibility(view.VISIBLE);
-                } else if () {
+                } else if (useraccount.getReservedBeds() > 0) {
+                    alreadyReserved.setVisibility(view.VISIBLE);
                     // CHECK THE USER LOGGED IN
                     // IF HIS RESERVEDBEDS NUM IS >0, MAKE ALREADYRESERVED VISIBLE
                 } else {
