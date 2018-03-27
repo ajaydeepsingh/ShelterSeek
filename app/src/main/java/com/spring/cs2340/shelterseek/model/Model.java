@@ -66,6 +66,17 @@ public class Model {
         return true;
     }
 
+    /**
+     * @return the current user
+     */
+    public Account getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(Account user) {
+        currentUser = user;
+    }
+
     public ArrayList<Account> getAccounts() {
         return accounts;
     }

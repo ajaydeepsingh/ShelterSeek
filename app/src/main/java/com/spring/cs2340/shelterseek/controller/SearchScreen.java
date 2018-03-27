@@ -42,14 +42,16 @@ public class SearchScreen extends AppCompatActivity {
             if (s.equalsIgnoreCase("female")) {
                 s = "Women";
             }
-            parseData(s);
-            ArrayAdapter<Shelter> adapter = new ArrayAdapter<Shelter>(this,
-                    android.R.layout.simple_list_item_1, shelterSearchList);
-            shelterSearch.setAdapter(adapter);
+            if (s != null) {
+                parseDataSearch(s);
+                ArrayAdapter<Shelter> adapter = new ArrayAdapter<Shelter>(this,
+                        android.R.layout.simple_list_item_1, shelterSearchList);
+                shelterSearch.setAdapter(adapter);
+            }
         });
     }
 
-    private void parseData(String s) {
+    private void parseDataSearch(String s) {
         InputStream shelterStream = getResources().openRawResource(R.raw.homelessdatabase);
         String[] words = s.split(" ");
         for (String word : words) {
