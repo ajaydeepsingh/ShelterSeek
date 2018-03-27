@@ -5,11 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.spring.cs2340.shelterseek.R;
 import com.spring.cs2340.shelterseek.model.Model;
+import com.spring.cs2340.shelterseek.model.Account;
+
+import java.util.ArrayList;
 
 public class WelcomeScreen extends AppCompatActivity {
     Model model;
@@ -27,6 +31,7 @@ public class WelcomeScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_welcome_screen);
         model = Model.getInstance();
 
@@ -42,7 +47,16 @@ public class WelcomeScreen extends AppCompatActivity {
             public void onClick(View view) {
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
-                if (user.equals("User") && pass.equals("Pass")) {
+                Model m = Model.getInstance();
+                ArrayList<Account> accounts = m.getAccounts();
+                boolean login = false;
+                for (Account a: accounts) {
+                    if (user.equals(a.getUserName()) && pass.equals(a.getPassword())) {
+                        login = true;
+                        model.setCurrentUser(a);
+                    }
+                }
+                if (login) {
                     Intent newIntent = new Intent(getBaseContext(), MainScreen.class);
                     startActivity(newIntent);
                 } else {

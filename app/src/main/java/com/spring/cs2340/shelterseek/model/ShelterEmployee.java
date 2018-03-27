@@ -13,12 +13,12 @@ public class ShelterEmployee extends Account {
 
     }
 
-    public ShelterEmployee(String name, String userId, String password, String contactInfo) {
-        this(name, userId, password, contactInfo, null);
+    public ShelterEmployee(String name, String userName, String password, String contactInfo) {
+        this(name, userName, password, contactInfo, null);
     }
 
-    public ShelterEmployee(String name, String userId, String password, String contactInfo, String shelterID) {
-        super(name, userId, password, false, contactInfo);
+    public ShelterEmployee(String name, String userName, String password, String contactInfo, String shelterID) {
+        super(name, userName, password, false, contactInfo);
         this.shelterID = shelterID;
     }
 
@@ -34,7 +34,7 @@ public class ShelterEmployee extends Account {
     public String toString() {
         return "---SHELTER EMPLOYEE---\n" +
                 "Name: " + getName() + "\n" +
-                "Username: " + getUserId() + "\n" +
+                "Username: " + getUserName() + "\n" +
                 "Password: " + getPassword() + "\n" +
                 "Contact Info: " + getContactInfo() + "\n" +
                 "ShelterEmployee: " + getShelterID();

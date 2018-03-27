@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".controller.WelcomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,10 +16,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controller.MainScreen" />
-        <activity android:name=".controller.UserRegistrationScreen" />
-        <activity android:name=".controller.ShelterRegistrationScreen" />
-        <activity android:name=".controller.AdminRegistrationScreen"></activity>
+        <activity
+            android:name=".controller.MainScreen"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".controller.UserRegistrationScreen"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".controller.ShelterRegistrationScreen"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".controller.AdminRegistrationScreen"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".controller.ShelterDetail" />
+        <activity
+            android:name=".controller.SearchScreen"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".controller.ReserveScreen"></activity>
     </application>
 
 </manifest>

@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.spring.cs2340.shelterseek.R;
+import com.spring.cs2340.shelterseek.model.Model;
+import com.spring.cs2340.shelterseek.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +28,8 @@ public class UserRegistrationScreen extends AppCompatActivity {
         final EditText realName = (EditText) findViewById(R.id.realName);
         final EditText contactInfo = (EditText) findViewById(R.id.phoneNumSeeker);
         final EditText dob = (EditText) findViewById(R.id.dateOfBirth);
-        CheckBox isVet = (CheckBox) findViewById(R.id.veteranBox);
+        final CheckBox isVet = (CheckBox) findViewById(R.id.veteranBox);
+        final Spinner gender = (Spinner) findViewById(R.id.GenderSpinner);
         Button registerAsUser = (Button) findViewById(R.id.userRegister);
         registerAsUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +37,19 @@ public class UserRegistrationScreen extends AppCompatActivity {
 
                 // if isVet is checked, change boolean to true
                 // add new user to arraylist
+                boolean isVeteran = false;
+                if (isVet.isChecked()) {
+                    isVeteran = true;
+                }
+                String uName = username.getText().toString();
+                String pWord = password.getText().toString();
+                String rName = realName.getText().toString();
+                String cInfo = contactInfo.getText().toString();
+                String dOfBirth = dob.getText().toString();
+                String uGender = gender.getSelectedItem().toString();
+                User newUser = new User(rName, uName, pWord, false, cInfo, uGender, dOfBirth, isVeteran);
+                Model m = Model.getInstance();
+                m.addNewAccount(newUser);
 
                 Intent newIntent = new Intent(getBaseContext(), WelcomeScreen.class);
                 startActivity(newIntent);

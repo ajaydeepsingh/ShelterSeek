@@ -6,16 +6,16 @@ package com.spring.cs2340.shelterseek.model;
 
 public abstract class Account {
     private String name;
-    private String userId;
+    private String userName;
     private String password;
     private boolean lockedOut;
     private String contactInfo;
 
 
 
-    public Account(String name, String userId, String password, boolean lockedOut, String contactInfo) {
+    public Account(String name, String userName, String password, boolean lockedOut, String contactInfo) {
         this.name = name;
-        this.userId = userId;
+        this.userName = userName;
         this.password = password;
         this.lockedOut = lockedOut;
         this.contactInfo = contactInfo;
@@ -25,12 +25,12 @@ public abstract class Account {
         // no args constructor
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserId(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
