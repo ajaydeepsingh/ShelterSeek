@@ -16,6 +16,8 @@ import com.spring.cs2340.shelterseek.model.Account;
 import java.util.ArrayList;
 
 public class WelcomeScreen extends AppCompatActivity {
+
+
     Model model;
     Button loginButton;
     Button cancelButton;

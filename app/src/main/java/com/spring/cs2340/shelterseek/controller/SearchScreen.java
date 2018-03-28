@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.spring.cs2340.shelterseek.R;
 import com.spring.cs2340.shelterseek.model.Shelter;
 
@@ -24,6 +26,7 @@ import java.util.ArrayList;
 public class SearchScreen extends AppCompatActivity {
     private ListView shelterSearch;
     private static ArrayList<Shelter> shelterSearchList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
