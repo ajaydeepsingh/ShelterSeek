@@ -29,7 +29,7 @@ public class Model {
     /**
      * make a new model
      */
-    private Model() {
+    public Model() {
         accounts = new ArrayList<Account>();
         this.dummyData();
     }
