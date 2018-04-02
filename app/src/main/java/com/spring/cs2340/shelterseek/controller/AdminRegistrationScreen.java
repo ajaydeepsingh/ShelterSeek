@@ -44,7 +44,7 @@ public class AdminRegistrationScreen extends AppCompatActivity {
                     startActivity(newIntent);
                 } else {
                     invalid.setVisibility(View.VISIBLE);
-                };
+                }
             }
         });
     }

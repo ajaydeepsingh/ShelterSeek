@@ -1,9 +1,5 @@
 package com.spring.cs2340.shelterseek.model;
 
-/**
- * Created by ajay on 2/15/18.
- */
-
 public abstract class Account {
     private String name;
     private String userName;

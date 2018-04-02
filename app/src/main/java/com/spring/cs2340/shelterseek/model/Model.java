@@ -4,10 +4,6 @@ import java.util.HashSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * Created by ajay on 2/16/18.
- */
-
 public class Model {
     /**
      * Singleton instance
@@ -30,7 +26,7 @@ public class Model {
      * make a new model
      */
     public Model() {
-        accounts = new ArrayList<Account>();
+        accounts = new ArrayList<>();
         this.dummyData();
     }
 

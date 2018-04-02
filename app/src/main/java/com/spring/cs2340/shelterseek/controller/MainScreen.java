@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainScreen extends AppCompatActivity {
-    private ListView shelters;
     private static ArrayList<Shelter> shelterList = new ArrayList<>();
 
     @Override
@@ -31,10 +30,10 @@ public class MainScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
         Button searchButton = findViewById(R.id.Search);
-        shelters = findViewById(R.id.shelterList);
+        ListView shelters = findViewById(R.id.shelterList);
         shelterList = new ArrayList<>();
         parseData();
-        ArrayAdapter<Shelter> adapter = new ArrayAdapter<Shelter>(this,
+        ArrayAdapter<Shelter> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, shelterList);
         shelters.setAdapter(adapter);
         shelters.setOnItemClickListener(new AdapterView.OnItemClickListener() {

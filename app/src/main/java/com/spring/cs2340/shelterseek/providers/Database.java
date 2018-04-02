@@ -11,11 +11,6 @@ import com.spring.cs2340.shelterseek.model.Shelter;
 
 import java.sql.SQLException;
 
-
-/**
- * Created by ajay on 3/27/18.
- */
-
 public class Database extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;

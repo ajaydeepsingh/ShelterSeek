@@ -24,7 +24,6 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 public class ReserveScreen extends AppCompatActivity {
-    private DatabaseReference mdatabase;
     private DatabaseReference mdatabase2;
 
     @Override
@@ -37,7 +36,7 @@ public class ReserveScreen extends AppCompatActivity {
         Shelter selectedShelter = shelters.get(position);
         TextView mCapacity = findViewById(R.id.capacityToReserve);
         TextView mVacancy = findViewById(R.id.vacancies);
-        mdatabase = FirebaseDatabase.getInstance().getReference().child("shelters").child(selectedShelter.getUniqueKey()
+        DatabaseReference mdatabase = FirebaseDatabase.getInstance().getReference().child("shelters").child(selectedShelter.getUniqueKey()
         ).child("Capacity");
         mdatabase2 = FirebaseDatabase.getInstance().getReference().child("shelters").child(selectedShelter.getUniqueKey()
         ).child("Vacancy");
@@ -93,9 +92,9 @@ public class ReserveScreen extends AppCompatActivity {
                 String vacString = selectedShelter.getVacancies();
                 int compareVac = Integer.parseInt(vacString);
                 if (bedNum > compareVac) {
-                    error.setVisibility(view.VISIBLE);
+                    error.setVisibility(View.VISIBLE);
                 } else if (useraccount.getReservedBeds() > 0) {
-                    alreadyReserved.setVisibility(view.VISIBLE);
+                    alreadyReserved.setVisibility(View.VISIBLE);
                     // CHECK THE USER LOGGED IN
                     // IF HIS RESERVEDBEDS NUM IS >0, MAKE ALREADYRESERVED VISIBLE
                 } else {

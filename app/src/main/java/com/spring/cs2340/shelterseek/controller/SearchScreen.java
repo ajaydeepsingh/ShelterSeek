@@ -47,7 +47,7 @@ public class SearchScreen extends AppCompatActivity {
             }
             if (s != null) {
                 parseDataSearch(s);
-                ArrayAdapter<Shelter> adapter = new ArrayAdapter<Shelter>(this,
+                ArrayAdapter<Shelter> adapter = new ArrayAdapter<>(this,
                         android.R.layout.simple_list_item_1, shelterSearchList);
                 shelterSearch.setAdapter(adapter);
             }

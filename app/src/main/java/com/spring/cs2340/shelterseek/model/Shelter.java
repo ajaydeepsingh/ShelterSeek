@@ -6,10 +6,6 @@ import android.os.Parcelable;
 import java.util.Set;
 import java.util.HashSet;
 
-/**
- * Created by ajay on 02/15/18.
- */
-
 public class Shelter implements Parcelable {
     private String uniqueKey;
     private String name;
@@ -70,66 +66,130 @@ public class Shelter implements Parcelable {
 
     }
 
+    /**
+     *
+     * @return the unique key
+     */
     public String getUniqueKey() {
         return uniqueKey;
     }
 
+    /**
+     *
+     * @return the unique name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @return shelter capacity
+     */
     public String getCapacity() {
         return capacity;
     }
 
+    /**
+     *
+     * @return number of vacancies
+     */
     public String getVacancies() {
         return vacancies;
     }
 
+    /**
+     *
+     * @return restrictions of each shelter
+     */
     public String getRestrictions() {
         return restrictions;
     }
 
+    /**
+     *
+     * @return contact info for shelter
+     */
     public String getContactInfo() {
         return contactInfo;
     }
 
+    /**
+     *
+     * @return latitude of shelter
+     */
     public double getLatitude() {
         return latitude;
     }
 
+    /**
+     *
+     * @return longitude of shelter
+     */
     public double getLongitude() {
         return longitude;
     }
 
+    /**
+     *
+     * @param key key to replace unique key with
+     */
     public void setUniqueKey(String key) {
         uniqueKey = key;
     }
 
+    /**
+     *
+     * @param n new name
+     */
     public void setName(String n) {
         name = n;
     }
 
+    /**
+     *
+     * @param n new capacity
+     */
     public void setCapacity(String n) {
         capacity = n;
     }
 
+    /**
+     *
+     * @param n new vacancies
+     */
     public void setVacancies(String n) {
         vacancies = n;
     }
 
+    /**
+     *
+     * @param d new latitude
+     */
     public void setLatitude(double d) {
         latitude = d;
     }
 
+    /**
+     *
+     * @param d new longitude
+     */
     public void setLongitude(double d) {
         longitude = d;
     }
 
+    /**
+     *
+     * @param restr new restrictions
+     */
     public void setRestrictions(String restr) {
         restrictions = restr;
     }
 
+    /**
+     *
+     * @param contact new contact info
+     */
     public void setContactInfo(String contact) {
         contactInfo = contact;
     }
@@ -137,7 +197,7 @@ public class Shelter implements Parcelable {
 
     /**
      * Used internally
-     * @param p
+     * @param p a parcel
      */
     private Shelter(Parcel p) {
         uniqueKey = p.readString();
