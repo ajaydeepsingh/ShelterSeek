@@ -1,6 +1,5 @@
 package com.spring.cs2340.shelterseek.model;
 
-import java.util.HashSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 

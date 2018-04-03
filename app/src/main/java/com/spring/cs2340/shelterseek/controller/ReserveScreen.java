@@ -19,8 +19,6 @@ import com.spring.cs2340.shelterseek.model.User;
 import com.spring.cs2340.shelterseek.model.Model;
 
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class ReserveScreen extends AppCompatActivity {

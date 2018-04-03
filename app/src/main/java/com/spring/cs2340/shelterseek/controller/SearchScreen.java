@@ -1,18 +1,12 @@
 package com.spring.cs2340.shelterseek.controller;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.spring.cs2340.shelterseek.R;
 import com.spring.cs2340.shelterseek.model.Shelter;
 
@@ -45,12 +39,10 @@ public class SearchScreen extends AppCompatActivity {
             if (s.equalsIgnoreCase("female")) {
                 s = "Women";
             }
-            if (s != null) {
-                parseDataSearch(s);
-                ArrayAdapter<Shelter> adapter = new ArrayAdapter<>(this,
-                        android.R.layout.simple_list_item_1, shelterSearchList);
-                shelterSearch.setAdapter(adapter);
-            }
+            parseDataSearch(s);
+            ArrayAdapter<Shelter> adapter = new ArrayAdapter<>(this,
+                    android.R.layout.simple_list_item_1, shelterSearchList);
+            shelterSearch.setAdapter(adapter);
         });
     }
 
@@ -60,7 +52,7 @@ public class SearchScreen extends AppCompatActivity {
         for (String word : words) {
             BufferedReader reader = new BufferedReader(new InputStreamReader
                     (shelterStream, Charset.forName("UTF-8")));
-            String readLine = "";
+            String readLine;
             try {
                 reader.readLine();
                 readLine = reader.readLine();

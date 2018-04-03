@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -13,9 +12,6 @@ import android.widget.Spinner;
 import com.spring.cs2340.shelterseek.R;
 import com.spring.cs2340.shelterseek.model.Model;
 import com.spring.cs2340.shelterseek.model.User;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class UserRegistrationScreen extends AppCompatActivity {
 

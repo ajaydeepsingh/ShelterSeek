@@ -1,7 +1,5 @@
 package com.spring.cs2340.shelterseek.model;
 
-import java.util.List;
-
 /**
  *
  * Created by ajay on 2/15/2018

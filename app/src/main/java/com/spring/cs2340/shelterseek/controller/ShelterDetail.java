@@ -6,11 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.EditText;
 
 import com.spring.cs2340.shelterseek.R;
-import com.spring.cs2340.shelterseek.model.Account;
-import com.spring.cs2340.shelterseek.model.Model;
 import com.spring.cs2340.shelterseek.model.Shelter;
 
 import java.util.ArrayList;

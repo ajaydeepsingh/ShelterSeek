@@ -3,9 +3,6 @@ package com.spring.cs2340.shelterseek.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.Set;
-import java.util.HashSet;
-
 public class Shelter implements Parcelable {
     private String uniqueKey;
     private String name;
