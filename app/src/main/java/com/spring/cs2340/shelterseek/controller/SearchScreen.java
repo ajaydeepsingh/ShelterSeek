@@ -17,6 +17,10 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 
+/**
+ * search screen
+ * @version 1.0
+ */
 public class SearchScreen extends AppCompatActivity {
     private ListView shelterSearch;
     private static ArrayList<Shelter> shelterSearchList = new ArrayList<>();
@@ -33,10 +37,10 @@ public class SearchScreen extends AppCompatActivity {
         searchList.setOnClickListener(view -> {
             shelterSearchList = new ArrayList<>();
             String s = searchCond.getText().toString();
-            if (s.equalsIgnoreCase("male")) {
+            if ("male".equalsIgnoreCase(s)) {
                 s = "Men";
             }
-            if (s.equalsIgnoreCase("female")) {
+            if ("female".equalsIgnoreCase(s)) {
                 s = "Women";
             }
             parseDataSearch(s);
@@ -58,9 +62,10 @@ public class SearchScreen extends AppCompatActivity {
                 readLine = reader.readLine();
                 while (readLine != null) {
                     String[] tokens = readLine.split(",");
-                    if (tokens[0].contains(word) || tokens[1].contains(word) || tokens[2].contains(word) ||
-                            tokens[3].contains(word) || tokens[4].contains(word) || tokens[5].contains(word) ||
-                            tokens[6].contains(word) || tokens[7].contains(word) || tokens[8].contains(word)) {
+                    if (tokens[0].contains(word) || tokens[1].contains(word) || tokens[2]
+                            .contains(word) || tokens[3].contains(word) || tokens[4].contains(word)
+                            || tokens[5].contains(word) || tokens[6].contains(word) || tokens[7]
+                            .contains(word) || tokens[8].contains(word)) {
                         Shelter newShelter = new Shelter();
                         newShelter.setUniqueKey(tokens[0]);
                         newShelter.setName(tokens[1]);

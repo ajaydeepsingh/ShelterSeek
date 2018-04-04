@@ -26,6 +26,9 @@ public class ExampleUnitTest {
 
     // TESTS FOR MODEL addNewAccount Method, created by Justin Cozzone
 
+    /**
+     * sets up method
+     */
     @Before
     public void setUp() {
         // nothing needed because Model initializes an arrayList
@@ -48,8 +51,4 @@ public class ExampleUnitTest {
         assertTrue(instance.addNewAccount(a));
         assertTrue(instance.getAccounts().contains(a));
     }
-
-
-
-
 }

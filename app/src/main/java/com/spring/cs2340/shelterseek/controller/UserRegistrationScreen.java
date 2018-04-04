@@ -13,6 +13,10 @@ import com.spring.cs2340.shelterseek.R;
 import com.spring.cs2340.shelterseek.model.Model;
 import com.spring.cs2340.shelterseek.model.User;
 
+/**
+ * user registration
+ * @version 1.0
+ */
 public class UserRegistrationScreen extends AppCompatActivity {
 
     @Override
@@ -43,7 +47,8 @@ public class UserRegistrationScreen extends AppCompatActivity {
                 String cInfo = contactInfo.getText().toString();
                 String dOfBirth = dob.getText().toString();
                 String uGender = gender.getSelectedItem().toString();
-                User newUser = new User(rName, uName, pWord, false, cInfo, uGender, dOfBirth, isVeteran);
+                User newUser = new User(rName, uName, pWord, false, cInfo, uGender,
+                        dOfBirth, isVeteran);
                 Model m = Model.getInstance();
                 m.addNewAccount(newUser);
 

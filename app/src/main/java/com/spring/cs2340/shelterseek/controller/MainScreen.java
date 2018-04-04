@@ -19,6 +19,10 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 
+/**
+ * Main Screen of app, shows shelters
+ * @version 1.0
+ */
 public class MainScreen extends AppCompatActivity {
     private static ArrayList<Shelter> shelterList = new ArrayList<>();
 
@@ -52,6 +56,10 @@ public class MainScreen extends AppCompatActivity {
         });
     }
 
+    /**
+     * gets the shelterlist from the screen
+     * @return the shelters
+     */
     public static ArrayList<Shelter> getShelters() {
         return shelterList;
     }

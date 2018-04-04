@@ -12,6 +12,10 @@ import com.spring.cs2340.shelterseek.R;
 import com.spring.cs2340.shelterseek.model.Admin;
 import com.spring.cs2340.shelterseek.model.Model;
 
+/**
+ * Admin Registration Screen
+ * @version 1.0
+ */
 public class AdminRegistrationScreen extends AppCompatActivity {
 
     @Override
@@ -30,7 +34,7 @@ public class AdminRegistrationScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String adminText = adminCode.getText().toString();
-                if (adminText.equals("This is the admin code")) {
+                if ("This is the admin code".equals(adminText)) {
 
                     //Add a new admin to the arrayList
                     String uName = username.getText().toString();

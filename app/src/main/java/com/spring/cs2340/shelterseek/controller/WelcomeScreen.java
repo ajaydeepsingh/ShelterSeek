@@ -15,6 +15,10 @@ import com.spring.cs2340.shelterseek.model.Account;
 
 import java.util.ArrayList;
 
+/**
+ * login screen
+ * @version 1.0
+ */
 public class WelcomeScreen extends AppCompatActivity {
 
 
