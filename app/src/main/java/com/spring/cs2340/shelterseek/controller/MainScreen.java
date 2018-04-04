@@ -32,6 +32,7 @@ public class MainScreen extends AppCompatActivity {
         Button searchButton = findViewById(R.id.Search);
         ListView shelters = findViewById(R.id.shelterList);
         shelterList = new ArrayList<>();
+        Button mapView = findViewById(R.id.mapView);
         parseData();
         ArrayAdapter<Shelter> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, shelterList);
@@ -51,6 +52,13 @@ public class MainScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), SearchScreen.class);
                 startActivity(intent);
+            }
+        });
+        mapView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent newIntent = new Intent(getBaseContext(), mapView.class);
+                startActivity(newIntent);
             }
         });
     }
