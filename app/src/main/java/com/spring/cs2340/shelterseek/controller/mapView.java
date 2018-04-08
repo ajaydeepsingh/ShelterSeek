@@ -1,40 +1,15 @@
 package com.spring.cs2340.shelterseek.controller;
 
-/**
- * Created by Kevin on 4/3/2018.
- */
-
 import android.support.v7.app.AppCompatActivity;
-
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 import com.spring.cs2340.shelterseek.R;
 import com.spring.cs2340.shelterseek.model.Shelter;
-import com.spring.cs2340.shelterseek.model.User;
-import com.spring.cs2340.shelterseek.model.Model;
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.*;
-import android.app.Activity;
-import android.os.Bundle;import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+
+import android.os.Bundle;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -43,7 +18,10 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 
-
+/**
+ *  Map Screen
+ *  @version 1.0
+ */
 public class mapView  extends AppCompatActivity  implements OnMapReadyCallback {
     private GoogleMap mMap;
     private ArrayList<LatLng> latLngs = new ArrayList<>();
@@ -61,16 +39,20 @@ public class mapView  extends AppCompatActivity  implements OnMapReadyCallback {
         mapFragment.getMapAsync(this);
     }
 
+    /**
+     * Map Search
+     * @param view the view passed in
+     */
     public void onMapSearch(View view) {
         mMap.clear();
         EditText searchCond = (EditText) findViewById(R.id.searchTerm);
             shelterSearchList = new ArrayList<>();
             latLngs = new ArrayList<>();
             String s = searchCond.getText().toString();
-            if (s.equalsIgnoreCase("male")) {
+            if ("male".equalsIgnoreCase(s)) {
                 s = "Men";
             }
-            if (s.equalsIgnoreCase("female")) {
+            if ("female".equalsIgnoreCase(s)) {
                 s = "Women";
             }
             if (s != null) {
@@ -106,15 +88,16 @@ public class mapView  extends AppCompatActivity  implements OnMapReadyCallback {
         for (String word : words) {
             BufferedReader reader = new BufferedReader(new InputStreamReader
                     (shelterStream, Charset.forName("UTF-8")));
-            String readLine = "";
+            String readLine;
             try {
                 reader.readLine();
                 readLine = reader.readLine();
                 while (readLine != null) {
                     String[] tokens = readLine.split(",");
-                    if (tokens[0].contains(word) || tokens[1].contains(word) || tokens[2].contains(word) ||
-                            tokens[3].contains(word) || tokens[4].contains(word) || tokens[5].contains(word) ||
-                            tokens[6].contains(word) || tokens[7].contains(word) || tokens[8].contains(word)) {
+                    if (tokens[0].contains(word) || tokens[1].contains(word) || tokens[2]
+                            .contains(word) || tokens[3].contains(word) || tokens[4].contains(word)
+                            || tokens[5].contains(word) || tokens[6].contains(word) || tokens[7]
+                            .contains(word) || tokens[8].contains(word)) {
                         Shelter newShelter = new Shelter();
                         newShelter.setUniqueKey(tokens[0]);
                         newShelter.setName(tokens[1]);
@@ -128,7 +111,8 @@ public class mapView  extends AppCompatActivity  implements OnMapReadyCallback {
                         newShelter.setSpecialNotes(tokens[7]);
                         newShelter.setContactInfo(tokens[8]);
                         shelterSearchList.add(newShelter);
-                        latLngs.add(new LatLng(newShelter.getLatitude(), newShelter.getLongitude()));
+                        latLngs.add(new LatLng(newShelter.getLatitude(),
+                                newShelter.getLongitude()));
                     }
                     readLine = reader.readLine();
                 }
