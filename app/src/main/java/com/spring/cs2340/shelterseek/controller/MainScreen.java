@@ -1,10 +1,8 @@
 package com.spring.cs2340.shelterseek.controller;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,8 +18,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.List;
 
+/**
+ * Main Screen of app, shows shelters
+ * @version 1.0
+ */
 public class MainScreen extends AppCompatActivity {
     private static ArrayList<Shelter> shelterList = new ArrayList<>();
 
@@ -63,6 +64,10 @@ public class MainScreen extends AppCompatActivity {
         });
     }
 
+    /**
+     * gets the shelterlist from the screen
+     * @return the shelters
+     */
     public static ArrayList<Shelter> getShelters() {
         return shelterList;
     }
@@ -71,7 +76,7 @@ public class MainScreen extends AppCompatActivity {
         InputStream shelterStream = getResources().openRawResource(R.raw.homelessdatabase);
         BufferedReader reader = new BufferedReader(new InputStreamReader
                 (shelterStream, Charset.forName("UTF-8")));
-        String readLine = "";
+        String readLine;
         try {
             reader.readLine();
             readLine = reader.readLine();

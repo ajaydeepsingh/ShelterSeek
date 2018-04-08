@@ -3,9 +3,10 @@ package com.spring.cs2340.shelterseek.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.Set;
-import java.util.HashSet;
-
+/**
+ * shelter class
+ * @version 1.0
+ */
 public class Shelter implements Parcelable {
     private String uniqueKey;
     private String name;
@@ -13,44 +14,64 @@ public class Shelter implements Parcelable {
     private String vacancies;
     private double latitude;
     private double longitude;
-//    private float rating;
-//    private HashSet<String> restrictions;
-//    private float cost;
-//    private String contactInfo;
-//    private User[] blacklist;
-//    private User[] currentResidents;
+    private String specialNotes;
+    private String address;
+    private String restrictions;
+    private String contactInfo;
 
+    /**
+     * for all other notes in the shelter
+     * @return all the special things that are important
+     */
     public String getSpecialNotes() {
         return specialNotes;
     }
 
+    /**
+     * sets the notes to display
+     * @param specialNotes notes to display
+     */
     public void setSpecialNotes(String specialNotes) {
         this.specialNotes = specialNotes;
     }
 
-    private String specialNotes;
-
+    /**
+     * gets the address
+     * @return shelter address
+     */
     public String getAddress() {
         return address;
     }
 
+    /**
+     * sets the address
+     * @param address new address
+     */
     public void setAddress(String address) {
         this.address = address;
     }
 
-    private String address;
-    // private float rating;
-    private String restrictions;
-    // private float cost;
-    private String contactInfo;
-    // private User[] blacklist;
-    // private User[] currentResidents;
-
-
+    /**
+     * contructor for shelter
+     * Dev use only
+     */
     public Shelter() {
         this(null, null, null, null, 0, 0, null, null, null, null);
     }
 
+    /**
+     * creates a shelter
+     * @param key unique key
+     * @param name shelter name
+     * @param cap capacity
+     * @param restrics restrictions
+     * @param lon longitude
+     * @param lat latitude
+     * @param addr address
+     * @param specNotes additional notes
+     * @param contact contact info
+     * @param vac vacancies
+     */
     public Shelter(String key, String name, String cap, String restrics, double lon, double lat,
                    String addr, String specNotes, String contact, String vac) {
         uniqueKey = key;
@@ -63,7 +84,6 @@ public class Shelter implements Parcelable {
         contactInfo = contact;
         address = addr;
         specialNotes = specNotes;
-
     }
 
     /**
@@ -239,10 +259,11 @@ public class Shelter implements Parcelable {
      */
     public static final Parcelable.Creator<Shelter> CREATOR
             = new Parcelable.Creator<Shelter>() {
+        @Override
         public Shelter createFromParcel(Parcel in) {
             return new Shelter(in);
         }
-
+        @Override
         public Shelter[] newArray(int size) {
             return new Shelter[size];
         }

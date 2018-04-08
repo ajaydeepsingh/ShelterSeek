@@ -6,15 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.EditText;
 
 import com.spring.cs2340.shelterseek.R;
-import com.spring.cs2340.shelterseek.model.Account;
-import com.spring.cs2340.shelterseek.model.Model;
 import com.spring.cs2340.shelterseek.model.Shelter;
 
 import java.util.ArrayList;
 
+/**
+ * indepth look at the shelter
+ * @version 1.0
+ */
 public class ShelterDetail extends AppCompatActivity {
 //    private Shelter _shelterDisplayed;
 
@@ -61,7 +62,7 @@ public class ShelterDetail extends AppCompatActivity {
 
 //
 ////        if (getIntent().hasExtra(SOMETHING) { // GET THE EXTRA THING PASSED IN
-////             _shelterDisplayed = (Shelter) getIntent().getParcelableExtra(SAME SOMETHING); // THIS SHOULD CHANGE IT TO THE CORRECT SHELTER
+////             _shelterDisplayed = (Shelter) getIntent().getParcelableExtra(SAME SOMETHING);
 //            id.setText(_shelterDisplayed.getUniqueKey());
 //            name.setText(_shelterDisplayed.getName());
 //            address.setText(_shelterDisplayed.getName());

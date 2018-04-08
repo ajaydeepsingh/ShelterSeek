@@ -62,8 +62,10 @@ public class mapView  extends AppCompatActivity  implements OnMapReadyCallback {
     }
 
     public void onMapSearch(View view) {
+        mMap.clear();
         EditText searchCond = (EditText) findViewById(R.id.searchTerm);
             shelterSearchList = new ArrayList<>();
+            latLngs = new ArrayList<>();
             String s = searchCond.getText().toString();
             if (s.equalsIgnoreCase("male")) {
                 s = "Men";
@@ -81,8 +83,10 @@ public class mapView  extends AppCompatActivity  implements OnMapReadyCallback {
                 options.title(currentShelter.getName());
                 options.snippet(currentShelter.getContactInfo());
                 mMap.addMarker(options);
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngs.get(0),12));
                 i++;
             }
+
 
     }
 

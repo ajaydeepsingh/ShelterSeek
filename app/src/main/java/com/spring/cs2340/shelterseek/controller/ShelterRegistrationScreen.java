@@ -11,6 +11,10 @@ import com.spring.cs2340.shelterseek.R;
 import com.spring.cs2340.shelterseek.model.Model;
 import com.spring.cs2340.shelterseek.model.ShelterEmployee;
 
+/**
+ * registers a new shelter
+ * @version 1.0
+ */
 public class ShelterRegistrationScreen extends AppCompatActivity {
 
     @Override

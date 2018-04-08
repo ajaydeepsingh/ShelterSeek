@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -14,9 +13,10 @@ import com.spring.cs2340.shelterseek.R;
 import com.spring.cs2340.shelterseek.model.Model;
 import com.spring.cs2340.shelterseek.model.User;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * user registration
+ * @version 1.0
+ */
 public class UserRegistrationScreen extends AppCompatActivity {
 
     @Override
@@ -47,7 +47,8 @@ public class UserRegistrationScreen extends AppCompatActivity {
                 String cInfo = contactInfo.getText().toString();
                 String dOfBirth = dob.getText().toString();
                 String uGender = gender.getSelectedItem().toString();
-                User newUser = new User(rName, uName, pWord, false, cInfo, uGender, dOfBirth, isVeteran);
+                User newUser = new User(rName, uName, pWord, false, cInfo, uGender,
+                        dOfBirth, isVeteran);
                 Model m = Model.getInstance();
                 m.addNewAccount(newUser);
 

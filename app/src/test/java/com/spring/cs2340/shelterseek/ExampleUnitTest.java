@@ -7,8 +7,6 @@ import com.spring.cs2340.shelterseek.model.User;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-
 import static org.junit.Assert.*;
 
 /**
@@ -28,6 +26,9 @@ public class ExampleUnitTest {
 
     // TESTS FOR MODEL addNewAccount Method, created by Justin Cozzone
 
+    /**
+     * sets up method
+     */
     @Before
     public void setUp() {
         // nothing needed because Model initializes an arrayList
@@ -41,7 +42,7 @@ public class ExampleUnitTest {
     @Test
     public void testNullString() {
         Account str = null;
-        assertFalse(instance.addNewAccount(str));
+        assertFalse(instance.addNewAccount(null));
     }
 
     @Test
@@ -50,8 +51,4 @@ public class ExampleUnitTest {
         assertTrue(instance.addNewAccount(a));
         assertTrue(instance.getAccounts().contains(a));
     }
-
-
-
-
 }

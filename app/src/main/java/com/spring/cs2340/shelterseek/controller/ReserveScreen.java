@@ -19,10 +19,12 @@ import com.spring.cs2340.shelterseek.model.User;
 import com.spring.cs2340.shelterseek.model.Model;
 
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
+/**
+ * screen to reserve beds
+ * @version 1.0
+ */
 public class ReserveScreen extends AppCompatActivity {
     private DatabaseReference mdatabase2;
 
@@ -36,9 +38,11 @@ public class ReserveScreen extends AppCompatActivity {
         Shelter selectedShelter = shelters.get(position);
         TextView mCapacity = findViewById(R.id.capacityToReserve);
         TextView mVacancy = findViewById(R.id.vacancies);
-        DatabaseReference mdatabase = FirebaseDatabase.getInstance().getReference().child("shelters").child(selectedShelter.getUniqueKey()
+        DatabaseReference mdatabase = FirebaseDatabase.getInstance().getReference()
+                .child("shelters").child(selectedShelter.getUniqueKey()
         ).child("Capacity");
-        mdatabase2 = FirebaseDatabase.getInstance().getReference().child("shelters").child(selectedShelter.getUniqueKey()
+        mdatabase2 = FirebaseDatabase.getInstance().getReference().child("shelters")
+                .child(selectedShelter.getUniqueKey()
         ).child("Vacancy");
         mdatabase.addValueEventListener(new ValueEventListener() {
             @Override
@@ -84,7 +88,7 @@ public class ReserveScreen extends AppCompatActivity {
                 int bedNum = Integer.parseInt(bedString);
                 String vac = selectedShelter.getVacancies();
                 int vac1 = Integer.parseInt(vac);
-                if ((vac1 > bedNum  || vac1 == bedNum) && (useraccount.getReservedBeds() == 0)) {
+                if (((vac1 > bedNum) || (vac1 == bedNum)) && (useraccount.getReservedBeds() == 0)) {
                     int result = vac1 - bedNum;
                     vac = Integer.toString(result);
                     }

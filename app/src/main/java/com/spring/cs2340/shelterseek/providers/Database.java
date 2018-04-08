@@ -2,15 +2,14 @@ package com.spring.cs2340.shelterseek.providers;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.os.Build;
 
 import com.spring.cs2340.shelterseek.model.Shelter;
 
-import java.sql.SQLException;
-
+/**
+ * Database in use to store data
+ */
 public class Database extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
@@ -23,7 +22,15 @@ public class Database extends SQLiteOpenHelper {
     public static final String COLUMN_LATITUDE = "shelterLatitude";
     public static final String COLUMN_PHONE = "shelterPhone";
 
-    public Database(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    /**
+     * creates a new database
+     * @param context context
+     * @param name name of database
+     * @param factory factory
+     * @param version version num
+     */
+    public Database(Context context, String name, SQLiteDatabase.CursorFactory factory,
+                    int version) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
     }
 
@@ -45,7 +52,10 @@ public class Database extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    //Add new row
+    /**
+     * adds shelter to database
+     * @param shelter the shelter to add
+     */
     public void addShelter(Shelter shelter) {
         ContentValues values = new ContentValues();
         values.put(COLUMN_SHELTERNAME, shelter.getName());
@@ -58,9 +68,14 @@ public class Database extends SQLiteOpenHelper {
         db.insert(TABLE_SHELTERS, null, values);
         db.close();
     }
-    //Delete a shelter from the database
+
+    /**
+     * deletes a shelter from the database
+     * @param shelterName sheltername to search for
+     */
     public void deleteShelter(String shelterName) {
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("DELETE FROM " + TABLE_SHELTERS + "WHERE " + COLUMN_SHELTERNAME + "-\"" + shelterName + "\";");
+        db.execSQL("DELETE FROM " + TABLE_SHELTERS + "WHERE " + COLUMN_SHELTERNAME +
+                "-\"" + shelterName + "\";");
     }
 }
