@@ -43,9 +43,7 @@ public class MainScreen extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getBaseContext(), ShelterDetail.class);
                 intent.putExtra("position", i);
-                System.out.println("About to open ShelterPage");
                 startActivity(intent);
-                System.out.println("Started new intent");
             }
         });
         searchButton.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +63,7 @@ public class MainScreen extends AppCompatActivity {
     }
 
     /**
-     * gets the shelterlist from the screen
+     * gets the shelter list from the screen
      * @return the shelters
      */
     public static ArrayList<Shelter> getShelters() {

@@ -12,7 +12,7 @@ import com.spring.cs2340.shelterseek.model.Model;
 import com.spring.cs2340.shelterseek.model.ShelterEmployee;
 
 /**
- * registers a new shelter
+ * Registers a new shelter
  * @version 1.0
  */
 public class ShelterRegistrationScreen extends AppCompatActivity {
@@ -32,7 +32,7 @@ public class ShelterRegistrationScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                // add new shelter to arraylist
+                // add new shelter account to arraylist
                 String eName = employeeName.getText().toString();
                 String uName = userName.getText().toString();
                 String pWord = password.getText().toString();

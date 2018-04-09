@@ -19,10 +19,10 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 /**
- *  Map Screen
- *  @version 1.0
+ * Map Screen
+ * @version 1.0
  */
-public class mapView  extends AppCompatActivity  implements OnMapReadyCallback {
+public class mapView extends AppCompatActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
     private ArrayList<LatLng> latLngs = new ArrayList<>();
     private static ArrayList<Shelter> shelterSearchList = new ArrayList<>();
@@ -46,36 +46,32 @@ public class mapView  extends AppCompatActivity  implements OnMapReadyCallback {
     public void onMapSearch(View view) {
         mMap.clear();
         EditText searchCond = (EditText) findViewById(R.id.searchTerm);
-            shelterSearchList = new ArrayList<>();
-            latLngs = new ArrayList<>();
-            String s = searchCond.getText().toString();
-            if ("male".equalsIgnoreCase(s)) {
-                s = "Men";
-            }
-            if ("female".equalsIgnoreCase(s)) {
-                s = "Women";
-            }
-            if (s != null) {
-                parseDataSearch(s);
-            }
-            int i = 0;
-            for (LatLng point : latLngs) {
-                Shelter currentShelter = shelterSearchList.get(i);
-                options.position(point);
-                options.title(currentShelter.getName());
-                options.snippet(currentShelter.getContactInfo());
-                mMap.addMarker(options);
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngs.get(0),12));
-                i++;
-            }
-
-
+        shelterSearchList = new ArrayList<>();
+        latLngs = new ArrayList<>();
+        String s = searchCond.getText().toString();
+        if ("male".equalsIgnoreCase(s)) {
+            s = "Men";
+        }
+        if ("female".equalsIgnoreCase(s)) {
+            s = "Women";
+        }
+        if (s != null) {
+            parseDataSearch(s);
+        }
+        int shelterIndex = 0;
+        for (LatLng point : latLngs) {
+            Shelter currentShelter = shelterSearchList.get(shelterIndex);
+            options.position(point);
+            options.title(currentShelter.getName());
+            options.snippet(currentShelter.getContactInfo());
+            mMap.addMarker(options);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngs.get(0),12));
+            shelterIndex++;
+        }
     }
-
 
     @Override
     public void onMapReady(GoogleMap map) {
-
         mMap = map;
         //LatLng sydney = new LatLng(-34, 151);
         //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
@@ -122,4 +118,3 @@ public class mapView  extends AppCompatActivity  implements OnMapReadyCallback {
         }
     }
 }
-

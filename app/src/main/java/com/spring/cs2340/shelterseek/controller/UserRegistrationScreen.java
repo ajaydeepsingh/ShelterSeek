@@ -14,7 +14,7 @@ import com.spring.cs2340.shelterseek.model.Model;
 import com.spring.cs2340.shelterseek.model.User;
 
 /**
- * user registration
+ * User registration - creates a new user based on info provided
  * @version 1.0
  */
 public class UserRegistrationScreen extends AppCompatActivity {
@@ -35,8 +35,7 @@ public class UserRegistrationScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                // if isVet is checked, change boolean to true
-                // add new user to arraylist
+                // if isVet boolean is checked, change boolean to true
                 boolean isVeteran = false;
                 if (isVet.isChecked()) {
                     isVeteran = true;
