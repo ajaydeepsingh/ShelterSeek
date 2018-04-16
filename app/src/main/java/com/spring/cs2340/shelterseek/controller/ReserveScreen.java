@@ -47,7 +47,7 @@ public class ReserveScreen extends AppCompatActivity {
         mdatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getValue().toString() != null) {
+                if (dataSnapshot.getValue() != null) {
                     String capacity = dataSnapshot.getValue().toString();
                     mCapacity.setText("Capacity: " + capacity);
                 }
@@ -61,7 +61,7 @@ public class ReserveScreen extends AppCompatActivity {
         mdatabase2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getValue().toString() != null) {
+                if (dataSnapshot.getValue() != null) {
                     String vacancy = dataSnapshot.getValue().toString();
                     mVacancy.setText("Vacancy: " + vacancy);
                     selectedShelter.setVacancies(vacancy);

@@ -146,7 +146,9 @@ public class Shelter implements Parcelable {
      * @param key key to replace unique key with
      */
     public void setUniqueKey(String key) {
-        uniqueKey = key;
+        if (key != null) {
+            uniqueKey = key;
+        }
     }
 
     /**

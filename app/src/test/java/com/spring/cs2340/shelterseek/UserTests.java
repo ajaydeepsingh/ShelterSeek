@@ -2,6 +2,7 @@ package com.spring.cs2340.shelterseek;
 
 import com.spring.cs2340.shelterseek.model.Account;
 import com.spring.cs2340.shelterseek.model.Model;
+import com.spring.cs2340.shelterseek.model.Shelter;
 import com.spring.cs2340.shelterseek.model.ShelterEmployee;
 import com.spring.cs2340.shelterseek.model.User;
 import org.junit.Test;
@@ -27,49 +28,29 @@ import static org.junit.Assert.assertTrue;
  */
 public class UserTests {
     final Model modelInstance = new Model();
+    public Shelter s;
     /**
      * sets up method
      */
     @Before
     public void setUp() {
-        // nothing needed because Model initializes an arrayList
+        s = new Shelter(null);
     }
 
     @Test
-    public void testNull() {
-        assertFalse(modelInstance.addNewAccount(null));
+    public void testNoShelterKey() {
+        assertNull(s.getUniqueKey());
     }
 
     @Test
-    public void testNullString() {
-        ShelterEmployee str = null;
-        assertFalse(modelInstance.addNewAccount(str));
+    public void testNullSet() {
+        s.setUniqueKey(null);
+        assertNull(s.getUniqueKey());
     }
 
     @Test
-    public void testValidShelterEmployeeAdd() {
-        Account a = new ShelterEmployee("test", "testemployee", "password", "123456786", "randomshelterid");
-        assertTrue(modelInstance.addNewAccount(a));
-        assertTrue(modelInstance.getAccounts().contains(a));
-        assertEquals(a.getUserName(),"testemployee");
-        assertEquals(a.getName(),"test");
-        assertFalse(a.isLockedOut());
-        a.toStringDebug();
+    public void testValidSet() {
+        s.setUniqueKey("a");
+        assertTrue(s.getUniqueKey().equals("a"));
     }
-
-    @Test
-    public void testChangePassword() {
-        Account a = new ShelterEmployee("test", "testemployee", "password", "123456786", "randomshelterid");
-        a.setPassword("newpassword");
-        assertEquals(a.getPassword(),"newpassword");
-    }
-
-    @Test
-    public void testLockOut() {
-        Account a = new ShelterEmployee("test", "testemployee", "password", "123456786", "randomshelterid");
-        assertFalse(a.isLockedOut());
-        a.setLockedOut(true);
-        assertTrue(a.isLockedOut());
-    }
-
 }
