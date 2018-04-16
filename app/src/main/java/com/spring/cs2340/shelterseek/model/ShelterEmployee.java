@@ -66,4 +66,14 @@ public class ShelterEmployee extends Account {
                 "Contact Info: " + getContactInfo() + "\n" +
                 "ShelterEmployee: " + getShelterID();
     }
+
+    @Override
+    public void toStringDebug() {
+        System.out.print("---SHELTER EMPLOYEE---\n" +
+                "Name: " + getName() + "\n" +
+                "Username: " + getUserName() + "\n" +
+                "Password: " + getPassword() + "\n" +
+                "Contact Info: " + getContactInfo() + "\n" +
+                "ShelterEmployee: " + getShelterID());
+    }
 }

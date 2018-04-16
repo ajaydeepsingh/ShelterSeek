@@ -34,17 +34,6 @@ public class UserTests {
     public void setUp() {
         // nothing needed because Model initializes an arrayList
     }
-    @Test
-    public void testValidShelterEmployeeAdd() {
-        Account a = new ShelterEmployee("test", "testemployee", "password", "123456786", "randomshelterid");
-        assertTrue(modelInstance.addNewAccount(a));
-        assertTrue(modelInstance.getAccounts().contains(a));
-        assertEquals(a.getUserName(),"testemployee");
-        assertEquals(a.getName(),"test");
-        assertFalse(a.isLockedOut());
-        a.setPassword("newpassword");
-        assertEquals(a.getPassword(),"newpassword");
-    }
 
     @Test
     public void testNull() {
@@ -57,7 +46,30 @@ public class UserTests {
         assertFalse(modelInstance.addNewAccount(str));
     }
 
+    @Test
+    public void testValidShelterEmployeeAdd() {
+        Account a = new ShelterEmployee("test", "testemployee", "password", "123456786", "randomshelterid");
+        assertTrue(modelInstance.addNewAccount(a));
+        assertTrue(modelInstance.getAccounts().contains(a));
+        assertEquals(a.getUserName(),"testemployee");
+        assertEquals(a.getName(),"test");
+        assertFalse(a.isLockedOut());
+        a.toStringDebug();
+    }
 
+    @Test
+    public void testChangePassword() {
+        Account a = new ShelterEmployee("test", "testemployee", "password", "123456786", "randomshelterid");
+        a.setPassword("newpassword");
+        assertEquals(a.getPassword(),"newpassword");
+    }
 
+    @Test
+    public void testLockOut() {
+        Account a = new ShelterEmployee("test", "testemployee", "password", "123456786", "randomshelterid");
+        assertFalse(a.isLockedOut());
+        a.setLockedOut(true);
+        assertTrue(a.isLockedOut());
+    }
 
 }
