@@ -21,20 +21,37 @@ public class kevinSetCapacity {
 
     @Test
     public void testNull() {
+        System.out.println("Expected: null");
         assertNull(shelter.getCapacity());
+        System.out.println("Actual: " + shelter.getCapacity());
+
     }
 
     @Test
-    public void testCapacity(){
+    public void testSetNull(){
+        shelter.setCapacity(null);
+        System.out.println("Expected: null");
+        assertEquals(shelter.getCapacity(), null);
+        assertNull(shelter.getCapacity());
+        System.out.println("Actual: " + shelter.getCapacity());
+    }
+
+    @Test
+    public void testSetCapacity() {
         shelter.setCapacity("0");
         assertEquals(shelter.getCapacity(), "0");
         assertNotNull(shelter.getCapacity());
+        System.out.println("Expected: 0");
+        System.out.println("Actual: " + shelter.getCapacity());
     }
+
     @Test
-    public void testSetNull(){
-        shelter.setCapacity(null);
-        assertEquals(shelter.getCapacity(), null);
-        assertNull(shelter.getCapacity());
+    public void testNegativeCapacity() {
+        shelter.setCapacity("-1");
+        assertEquals(shelter.getCapacity(), "0");
+        assertNotNull(shelter.getCapacity());
+        System.out.println("Expected: 0");
+        System.out.println("Actual: " + shelter.getCapacity());
     }
 
     @Test
@@ -43,20 +60,17 @@ public class kevinSetCapacity {
         shelter.setCapacity("60");
         assertEquals(shelter.getCapacity(), "60");
         assertNotNull(shelter.getCapacity());
+        System.out.println("Expected: 60");
+        System.out.println("Actual: " + shelter.getCapacity());
     }
 
     @Test
-    public void testChangetoNull() {
+    public void testChangeNull() {
         shelter.setCapacity("50");
         shelter.setCapacity(null);
         assertEquals(shelter.getCapacity(), null);
         assertNull(shelter.getCapacity());
-    }
-
-    @Test
-    public void testNegativeCapacity() {
-        shelter.setCapacity("-1");
-        assertEquals(shelter.getCapacity(), "0");
-        assertNotNull(shelter.getCapacity());
+        System.out.println("Expected: null");
+        System.out.println("Actual: " + shelter.getCapacity());
     }
 }
