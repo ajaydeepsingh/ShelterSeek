@@ -172,6 +172,11 @@ public class Shelter implements Parcelable {
      */
     public void setCapacity(String n) {
         capacity = n;
+        if (n != null) {
+            if (Integer.parseInt(n) < 0) {
+                capacity = "0";
+            }
+        }
     }
 
     /**
