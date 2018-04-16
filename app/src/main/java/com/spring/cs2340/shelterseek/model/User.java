@@ -15,15 +15,14 @@ public class User extends Account {
      * @param name name
      * @param userName username
      * @param password password
-     * @param lockedOut if locked out
      * @param contactInfo phone num
      * @param gender gender
      * @param dateOfBirth DOB
      * @param isVeteran if is Veteran
      */
-    public User(String name, String userName, String password, boolean lockedOut,
+    public User(String name, String userName, String password,
                 String contactInfo, String gender, String dateOfBirth, boolean isVeteran) {
-        super(name, userName, password, lockedOut, contactInfo);
+        super(name, userName, password, false, contactInfo);
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
         this.isVeteran = isVeteran;
@@ -33,12 +32,10 @@ public class User extends Account {
     /**
      * creates a BASIC user
      * @param name name
-     * @param userName username
-     * @param contactInfo phone number
-     * @param password password
+     *
      */
-    public User(String name, String userName, String contactInfo, String password) {
-        this(name, userName, password, false, contactInfo, "Male", null, false);
+    public User(String name) {
+        this(name, "User", "Pass", "1234567890", "Male", null, false);
         this.reservedBeds = 0;
     }
 

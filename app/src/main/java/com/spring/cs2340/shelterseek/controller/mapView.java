@@ -55,9 +55,7 @@ public class mapView extends AppCompatActivity implements OnMapReadyCallback {
         if ("female".equalsIgnoreCase(s)) {
             s = "Women";
         }
-        if (s != null) {
-            parseDataSearch(s);
-        }
+        parseDataSearch(s);
         int shelterIndex = 0;
         for (LatLng point : latLngs) {
             Shelter currentShelter = shelterSearchList.get(shelterIndex);

@@ -55,7 +55,7 @@ public class Model {
      * dummy data method. not terribly useful
      */
     public final void dummyData() {
-        User dummy = new User("Bob", "User", "1234567890", "Pass");
+        User dummy = new User("Bob");
         this.addNewAccount(dummy);
     }
 

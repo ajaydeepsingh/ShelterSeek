@@ -56,34 +56,25 @@ public class Shelter implements Parcelable {
      * Dev use only
      */
     public Shelter() {
-        this(null, null, null, null, 0, 0, null, null, null, null);
+        this((String) null);
     }
 
     /**
      * creates a shelter
      * @param key unique key
-     * @param name shelter name
-     * @param cap capacity
-     * @param restrics restrictions
-     * @param lon longitude
-     * @param lat latitude
-     * @param addr address
-     * @param specNotes additional notes
-     * @param contact contact info
-     * @param vac vacancies
+     *
      */
-    public Shelter(String key, String name, String cap, String restrics, double lon, double lat,
-                   String addr, String specNotes, String contact, String vac) {
+    public Shelter(String key) {
         uniqueKey = key;
-        this.name = name;
-        capacity = cap;
-        vacancies = vac;
-        latitude = lat;
-        longitude = lon;
-        restrictions = restrics;
-        contactInfo = contact;
-        address = addr;
-        specialNotes = specNotes;
+        this.name = null;
+        capacity = null;
+        vacancies = null;
+        latitude = (double) 0;
+        longitude = (double) 0;
+        restrictions = null;
+        contactInfo = null;
+        address = null;
+        specialNotes = null;
     }
 
     /**

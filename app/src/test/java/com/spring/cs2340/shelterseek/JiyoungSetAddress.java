@@ -14,7 +14,7 @@ public class JiyoungSetAddress {
 
     @Before
     public void setUp() throws Exception {
-        shelter = new Shelter(null, null, null, null, 0, 0, null, null, null, null);
+        shelter = new Shelter(null);
     }
 
     @Test

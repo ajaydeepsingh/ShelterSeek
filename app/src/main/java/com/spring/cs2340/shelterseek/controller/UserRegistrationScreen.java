@@ -46,7 +46,7 @@ public class UserRegistrationScreen extends AppCompatActivity {
                 String cInfo = contactInfo.getText().toString();
                 String dOfBirth = dob.getText().toString();
                 String uGender = gender.getSelectedItem().toString();
-                User newUser = new User(rName, uName, pWord, false, cInfo, uGender,
+                User newUser = new User(rName, uName, pWord, cInfo, uGender,
                         dOfBirth, isVeteran);
                 Model m = Model.getInstance();
                 m.addNewAccount(newUser);

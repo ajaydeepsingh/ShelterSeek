@@ -63,10 +63,10 @@ public abstract class Account {
 
     /**
      * sets a new password
-     * @param password new password
+     * @param npassword new password
      */
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String npassword) {
+        this.password = npassword;
     }
 
     /**
@@ -79,10 +79,10 @@ public abstract class Account {
 
     /**
      * sets if user locked out
-     * @param lockedOut true or false manual setting
+     * @param islockedOut true or false manual setting
      */
-    public void setLockedOut(boolean lockedOut) {
-        this.lockedOut = lockedOut;
+    public void setLockedOut(boolean islockedOut) {
+        this.lockedOut = islockedOut;
     }
 
     /**
