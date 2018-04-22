@@ -22,7 +22,9 @@ public class Admin extends Account {
     public Admin() {
         // no args constructor
     }
-
+    public boolean isAdmin() {
+        return true;
+    }
     @Override
     public String toString() {
         return "------ADMIN------\n" +

@@ -117,7 +117,7 @@ public abstract class Account {
         this.name = name;
     }
 
-    public void toStringDebug() {
-
-    }
+    public boolean isAdmin() {
+        return false;
+    };
 }
