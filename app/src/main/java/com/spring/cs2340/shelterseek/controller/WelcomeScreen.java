@@ -56,16 +56,26 @@ public class WelcomeScreen extends AppCompatActivity {
                 String pass = password.getText().toString();
                 Model m = Model.getInstance();
                 ArrayList<Account> accounts = m.getAccounts();
+                int loginCounter = 0;
                 boolean login = false;
                 boolean admin = false;
                 for (Account a: accounts) {
-                    if (user.equals(a.getUserName()) && pass.equals(a.getPassword())) {
-                        login = true;
+                    if (user.equals(a.getUserName())) {
                         model.setCurrentUser(a);
-                        if (model.getCurrentUser().isAdmin()) {
-                            admin = true;
+                        if (pass.equals(model.getCurrentUser().getPassword())) {
+                            login = true;
+                        } else {
+                            loginCounter++;
+                            login = false;
+                        }
+                        if (loginCounter == 5)  {
+                            model.getCurrentUser().setLockedOut(true);
+                            login = false;
                         }
                     }
+                }
+                if (model.getCurrentUser().isAdmin()) {
+                    admin = true;
                 }
                 if (login && admin) {
                     Intent newIntent = new Intent(getBaseContext(), AdminScreen.class);
