@@ -70,6 +70,7 @@ public class WelcomeScreen extends AppCompatActivity {
                         }
                         if (loginCounter == 5)  {
                             model.getCurrentUser().setLockedOut(true);
+                            loginCounter = 0;
                             login = false;
                         }
                     }
