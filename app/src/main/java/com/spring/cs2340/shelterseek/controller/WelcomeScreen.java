@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.spring.cs2340.shelterseek.R;
-import com.spring.cs2340.shelterseek.model.Admin;
 import com.spring.cs2340.shelterseek.model.Model;
 import com.spring.cs2340.shelterseek.model.Account;
 
@@ -57,20 +56,13 @@ public class WelcomeScreen extends AppCompatActivity {
                 Model m = Model.getInstance();
                 ArrayList<Account> accounts = m.getAccounts();
                 boolean login = false;
-                boolean admin = false;
                 for (Account a: accounts) {
                     if (user.equals(a.getUserName()) && pass.equals(a.getPassword())) {
                         login = true;
                         model.setCurrentUser(a);
-                        if (a.toString().contains("------ADMIN------")) {
-                            admin = true;
-                        }
                     }
                 }
-                if (login && admin) {
-                    Intent newIntent = new Intent(getBaseContext(), AdminScreen.class);
-                    startActivity(newIntent);
-                } else if (login) {
+                if (login) {
                     Intent newIntent = new Intent(getBaseContext(), MainScreen.class);
                     startActivity(newIntent);
                 } else {
