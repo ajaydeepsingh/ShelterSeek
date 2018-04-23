@@ -41,7 +41,7 @@ public class AdminRegistrationScreen extends AppCompatActivity {
                     String pWord = password.getText().toString();
                     String cInfo = contactInfo.getText().toString();
                     String rName = realName.getText().toString();
-                    Admin newAdmin = new Admin(uName, pWord, cInfo, rName);
+                    Admin newAdmin = new Admin(rName, uName, pWord, cInfo);
                     Model m = Model.getInstance();
                     m.addNewAccount(newAdmin);
                     Intent newIntent = new Intent(getBaseContext(), WelcomeScreen.class);

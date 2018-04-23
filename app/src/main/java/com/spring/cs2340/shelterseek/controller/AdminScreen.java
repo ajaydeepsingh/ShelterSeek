@@ -34,9 +34,10 @@ public class AdminScreen extends AppCompatActivity {
             public void onClick(View view) {
                 String str = nameToDelete.getText().toString();
                 ArrayList<Account> acc = Model.getInstance().getAccounts();
-                for (Account a : acc) {
-                    if (a.getUserName().equals(str)) {
-                        acc.remove(a);
+                for (int i = 0; i < acc.size(); i++) {
+                    if (acc.get(i).getUserName().equals(str)) {
+                        acc.remove(acc.get(i));
+                        adapter.notifyDataSetChanged();
                     }
                 }
             }
