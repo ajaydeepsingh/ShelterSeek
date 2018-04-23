@@ -15,7 +15,14 @@ public class Model {
     private static ArrayList<Account> accounts;
     private HashMap<String, Shelter> mshelters;
     private Account currentUser;
+    private int loginCounter = 0;
 
+    public int getLoginCounter() {
+        return loginCounter;
+    }
+    public void setLoginCounter() {
+        loginCounter += 1;
+    }
     /**
      * returns the static instance of the model to use in the controller
      *

@@ -59,41 +59,39 @@ public class WelcomeScreen extends AppCompatActivity {
                 String pass = password.getText().toString();
                 Model m = Model.getInstance();
                 ArrayList<Account> accounts = m.getAccounts();
-                int loginCounter = 0;
                 boolean login = false;
                 boolean admin = false;
                 boolean lockoutCheck = false;
                 for (Account a: accounts) {
-                    if (user.equals(a.getUserName())) {
+                    if (user.equals(a.getUserName()) && pass.equals(a.getPassword())) {
                         model.setCurrentUser(a);
-                        if (pass.equals(model.getCurrentUser().getPassword())) {
-                            login = true;
-                        } else {
-                            loginCounter++;
-                            login = false;
+                        login = true;
+                        if (model.getCurrentUser().isAdmin()) {
+                            admin = true;
                         }
                     }
                 }
-
-                if (model.getCurrentUser().isAdmin()) {
-                    admin = true;
+                if (!login) {
+                    model.setLoginCounter();
                 }
-                if (login && admin) {
+                if (model.getLoginCounter() >= 5) {
+                    lockoutCheck = true;
+                }
+                if (!lockoutCheck && login && admin) {
                     Intent newIntent = new Intent(getBaseContext(), AdminScreen.class);
                     startActivity(newIntent);
-                } else if (login) {
+                } else if (!lockoutCheck && login) {
                     Intent newIntent = new Intent(getBaseContext(), MainScreen.class);
                     startActivity(newIntent);
-                } else {
+                } else if (!lockoutCheck){
                     incorrect.setVisibility(View.VISIBLE);
-                    loginCounter++;
+                } else if (lockoutCheck){
+                    lockout.setVisibility(View.VISIBLE);
+                    incorrect.setVisibility(View.INVISIBLE);
+                } else {
+                    //do nothing
                 }
 
-                if (loginCounter >= 5)  {
-                    model.getCurrentUser().setLockedOut(true);
-                    incorrect.setVisibility(View.VISIBLE);
-                    lockout.setVisibility(View.VISIBLE);
-                }
             }
         });
         registerUser.setOnClickListener(new View.OnClickListener() {
