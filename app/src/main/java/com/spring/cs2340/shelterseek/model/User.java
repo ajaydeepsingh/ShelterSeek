@@ -116,4 +116,7 @@ public class User extends Account {
                 "DOB: " + getDateOfBirth() + "\n" +
                 "Veteran: " + isVeteran();
     }
+    public boolean isAdmin() {
+        return false;
+    }
 }

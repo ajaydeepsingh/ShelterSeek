@@ -67,7 +67,6 @@ public class ShelterEmployee extends Account {
                 "ShelterEmployee: " + getShelterID();
     }
 
-    @Override
     public void toStringDebug() {
         System.out.print("---SHELTER EMPLOYEE---\n" +
                 "Name: " + getName() + "\n" +
@@ -75,5 +74,9 @@ public class ShelterEmployee extends Account {
                 "Password: " + getPassword() + "\n" +
                 "Contact Info: " + getContactInfo() + "\n" +
                 "ShelterEmployee: " + getShelterID());
+    }
+
+    public boolean isAdmin() {
+        return false;
     }
 }

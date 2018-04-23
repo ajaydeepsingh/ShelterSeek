@@ -62,10 +62,10 @@ public class WelcomeScreen extends AppCompatActivity {
                     if (user.equals(a.getUserName()) && pass.equals(a.getPassword())) {
                         login = true;
                         model.setCurrentUser(a);
-                        if (a.toString().contains("------ADMIN------")) {
-                            admin = true;
-                        }
                     }
+                }
+                if (model.getCurrentUser().isAdmin()) {
+                    admin = true;
                 }
                 if (login && admin) {
                     Intent newIntent = new Intent(getBaseContext(), AdminScreen.class);

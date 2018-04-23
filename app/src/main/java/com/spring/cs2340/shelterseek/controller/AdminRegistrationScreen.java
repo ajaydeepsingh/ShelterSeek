@@ -34,7 +34,7 @@ public class AdminRegistrationScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String adminText = adminCode.getText().toString();
-                if ("This is the admin code".equals(adminText)) {
+                if ("A".equals(adminText)) {
 
                     //Add a new admin to the arrayList
                     String uName = username.getText().toString();
