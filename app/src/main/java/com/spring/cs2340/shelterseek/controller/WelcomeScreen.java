@@ -43,8 +43,11 @@ public class WelcomeScreen extends AppCompatActivity {
         model = Model.getInstance();
 
         final TextView incorrect = (TextView) findViewById(R.id.Incorrect);
+        final TextView lockout = (TextView) findViewById(R.id.lockout);
         final EditText username = (EditText) findViewById(R.id.UserField);
         final EditText password = (EditText) findViewById(R.id.PasswordField);
+//        final EditText password = (EditText) findViewById(R.id.PasswordField);
+//        password.setTransformationMethod(new PasswordTransformationMethod());
         loginButton = (Button) findViewById(R.id.Login);
         registerUser = (Button) findViewById(R.id.RegisterUser);
         registerShelter = (Button) findViewById(R.id.registerShelter);
@@ -59,6 +62,7 @@ public class WelcomeScreen extends AppCompatActivity {
                 int loginCounter = 0;
                 boolean login = false;
                 boolean admin = false;
+                boolean lockoutCheck = false;
                 for (Account a: accounts) {
                     if (user.equals(a.getUserName())) {
                         model.setCurrentUser(a);
@@ -68,13 +72,9 @@ public class WelcomeScreen extends AppCompatActivity {
                             loginCounter++;
                             login = false;
                         }
-                        if (loginCounter == 5)  {
-                            model.getCurrentUser().setLockedOut(true);
-                            loginCounter = 0;
-                            login = false;
-                        }
                     }
                 }
+
                 if (model.getCurrentUser().isAdmin()) {
                     admin = true;
                 }
@@ -86,6 +86,13 @@ public class WelcomeScreen extends AppCompatActivity {
                     startActivity(newIntent);
                 } else {
                     incorrect.setVisibility(View.VISIBLE);
+                    loginCounter++;
+                }
+
+                if (loginCounter >= 5)  {
+                    model.getCurrentUser().setLockedOut(true);
+                    incorrect.setVisibility(View.VISIBLE);
+                    lockout.setVisibility(View.VISIBLE);
                 }
             }
         });
