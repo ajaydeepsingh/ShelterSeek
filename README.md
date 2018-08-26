@@ -12,12 +12,4 @@ Add a call button?
 
 ## Team Members
 
-Ajaydeep Singh
-
-Justin Cozzone
-
-Kevin Wong
-
-Sam Lim
-
-Jacob Lin
+Ajaydeep Singh, Justin Cozzone, [Kevin Wong](https://github.com/Kwong61), Sam Lim, Jacob Lin 
