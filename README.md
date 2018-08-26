@@ -12,4 +12,4 @@ Add a call button?
 
 ## Team Members
 
-[Ajay Singh](https://github.com/ajaydeepsingh), [Justin Cozzone]((https://github.com/jmc19), [Kevin Wong](https://github.com/Kwong61), [Sam Lim]((https://github.com/sam-lim), [Jacob Lin](https://github.com/Goalaso)
+[Ajay Singh](https://github.com/ajaydeepsingh), [Justin Cozzone](https://github.com/jmc19), [Kevin Wong](https://github.com/Kwong61), [Sam Lim]((https://github.com/sam-lim), [Jacob Lin](https://github.com/Goalaso)
